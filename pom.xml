@@ -13,6 +13,7 @@
         <spring-boot.version>2.1.9.RELEASE</spring-boot.version>
         <spring-cloud-alibaba.version>2.1.1.RELEASE</spring-cloud-alibaba.version>
         <spring-cloud.version>Greenwich.SR3</spring-cloud.version>
+        <sharding-sphere.version>4.0.0-RC3</sharding-sphere.version>
     </properties>
 
     <modules>
