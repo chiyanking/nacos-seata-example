@@ -1,0 +1,59 @@
+spring:
+  application:
+    name: nacos-seata-order-server
+  profiles:
+    include: db
+  # 数据源配置
+#  datasource:
+  #      type: com.zaxxer.hikari.HikariDataSource
+  #      hikari:
+  #        auto-commit: false
+  #        minimum-idle: 5
+  #        idle-timeout: 60000
+  #        connection-timeout: 30000
+  #        max-lifetime: 1800000
+  #        pool-name: DatebookHikariCP
+  #        maximum-pool-size: 30
+  #        jdbc-url: jdbc:mysql://192.168.0.21:3306/seata_order?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+  #        username: root
+  #        password: dianji888
+  #      driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: prex_tx_group
+    nacos:
+      discovery:
+        server-addr: 192.168.1.53:8848
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  typeAliasesPackage: com.xd.example.seata.domain
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+server:
+  port: 8081
+ribbon:
+  ReadTimeout: 500000
+  ConnectTimeout: 500000
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
+seata:
+  registry:
+    type: nacos
+    nacos:
+      server-addr: 192.168.1.53
+  config:
+    type: file
+    nacos:
+      server-addr: 192.168.1.53
+  enableAutoDataSourceProxy: false
+  service:
+    vgroup-mapping:
+      prex_tx_group: default
+logging:
+  level:
+    root: debug
+    sun:
+      net: info
+    org:
+      apache: info

@@ -1,0 +1,13 @@
+#spring:
+#  profiles:
+#    active: ${SPRING_PROFILES_ACTIVE:dev}
+#  application:
+#    name: nacos-seata-order-server
+#  main:
+#    allow-bean-definition-overriding: true
+#  cloud:
+#    nacos:
+#      config:
+#        server-addr: ${NACOS_SERVER_ADDR:192.168.1.53:8848}
+#        file-extension: ${NACOS_FILE_EXTENSION:yaml}
+#        namespace: ${NACOS_NAMESPACE:}
