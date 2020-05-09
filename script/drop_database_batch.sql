@@ -31,5 +31,3 @@ BEGIN
 
 call drop_databases("seata-order");
 
-DROP DATABASE `seata-order-1`;
-

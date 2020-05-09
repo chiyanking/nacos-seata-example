@@ -2,13 +2,11 @@ package com.wangtk.example.seata.config;
 
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;
-import io.seata.rm.datasource.DataSourceProxy;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
 
@@ -42,28 +40,10 @@ public class MyBatisPlusConfig {
      *
      * @return
      */
-//    @Bean
-//    @ConfigurationProperties(prefix = "spring.datasource.hikari")
-//    public DataSource hikariDataSource() {
-//        return new HikariDataSource();
-//    }
-
-    /**
-     * 构造datasource代理对象，替换原来的datasource
-     *
-     * @param hikariDataSource
-     * @return
-     */
-    @Primary
-    @Bean
-    public DataSourceProxy dataSourceProxy(DataSource shardingDataSource) {
-        return new DataSourceProxy(shardingDataSource);
-    }
-
     @Bean(name = "sqlSessionFactory")
-    public SqlSessionFactory sqlSessionFactoryBean(DataSourceProxy dataSourceProxy) throws Exception {
+    public SqlSessionFactory sqlSessionFactoryBean(DataSource shardingDataSource) throws Exception {
         MybatisSqlSessionFactoryBean bean = new MybatisSqlSessionFactoryBean();
-        bean.setDataSource(dataSourceProxy);
+        bean.setDataSource(shardingDataSource);
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         bean.setMapperLocations(resolver.getResources(mapperLocations));
 

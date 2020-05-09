@@ -10,8 +10,11 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import io.seata.core.context.RootContext;
 import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shardingsphere.transaction.annotation.ShardingTransactionType;
+import org.apache.shardingsphere.transaction.core.TransactionType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * <p>
@@ -61,8 +64,19 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     }
 
     @Override
+    @ShardingTransactionType(TransactionType.LOCAL)
+    @Transactional
     public void resetOrder() {
-        remove(Wrappers.<Order>lambdaQuery().eq(Order::getId, 1));
+//        for (int i = 0; i < 100; i++) {
+//            SeataOrder order = new SeataOrder();
+//            order.setId(i);
+//            order.setCount(1);
+//            order.setPayMoney(BigDecimal.ONE);
+//            order.setProductId(1);
+//            order.setStatus(0);
+//            saveOrUpdate(order);
+//        }
+        remove(Wrappers.emptyWrapper());
         baseMapper.deleteUndoLog();
     }
 

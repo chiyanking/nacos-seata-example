@@ -10,8 +10,17 @@ spring:
             enabled: false
     datasource:
       # 总库
-      names: seata-order-1,seata-order-2,seata-order-3,seata-order-4,seata-order-5
+      names: seata-order-0,seata-order-1,seata-order-2,seata-order-3,seata-order-4,seata-order-5
       # 数据源
+      seata-order-0:
+        type: com.zaxxer.hikari.HikariDataSource
+        auto-commit: false
+        minimum-idle: 2
+        maximum-pool-size: 5
+        driver-class-name: com.mysql.jdbc.Driver
+        jdbcUrl: jdbc:mysql://192.168.0.21:3306/seata-order-1?useSSL=false&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT&allowPublicKeyRetrieval=true
+        username: root
+        password: dianji888
       seata-order-1:
         type: com.zaxxer.hikari.HikariDataSource
         auto-commit: false
@@ -76,24 +85,27 @@ spring:
       # 默认分库策略
       default-database-strategy:
         inline:
-          shardingColumn: id
-          algorithmExpression: seata-order-$->{id % 6}
-#       广播表
-#      broadcastTables:
-#        - o_dict
-#      # 绑定表关系
-#      bindingTables:
-#        - order,o_order_item
-#      # 具体表策略
-#      tables:
-#        # 订单表
-#        o_order:
-#          actual-data-nodes: seata-order-$->{0..5}.o_order$->{0..71}
-#          table-strategy:
-#            inline:
-#              sharding-column: id
-#              algorithm-expression: o_order$->{id % 72}
-#        #  订单表详情
+          sharding-column: id
+          algorithm-expression: seata-order-$->{id % 6}
+      #            broadcastTables:
+      #              - o_dict
+      #            # 绑定表关系
+      #            bindingTables:
+      #              - order,o_order_item
+      # 具体表策略
+      tables:
+        # 订单表
+        s_order:
+          actual-data-nodes: seata-order-$->{0..5}.s_order
+          table-strategy:
+            inline:
+              sharding-column: id
+              algorithm-expression: s_order
+        #  订单表详情
+#      binding-tables:
+#        - order
+#      broadcast-tables:
+#        - order
 #        o_order_item:
 #          actual-data-nodes: odb$->{0..35}.o_order_item$->{0..71}
 #          table-strategy:
