@@ -1,7 +1,6 @@
 DROP PROCEDURE IF EXISTS drop_databases;
 CREATE PROCEDURE drop_databases(
-    IN paramDBNamePrefix VARCHAR(32),
-    IN paramDBNameSuffix VARCHAR(32)
+    IN paramDBName VARCHAR(32)
 )
 BEGIN
     DECLARE _done INT DEFAULT 0;
@@ -11,14 +10,14 @@ BEGIN
         WHERE SCHEMA_NAME LIKE @_paramDBName;
     DECLARE CONTINUE HANDLER FOR NOT FOUND SET _done = 1;
 
-    SET @_paramDBName = CONCAT("%", paramDBNamePrefix, "%", paramDBNameSuffix, "%");
+    SET @_paramDBName = CONCAT("%", paramDBName, "%");
 
 
     OPEN _cursor;
     REPEAT
         FETCH _cursor INTO _cursorValue;
         IF (_done <> 1) THEN
-            SET @prepareStatement = CONCAT("DROP DATABASE ", _cursorValue);
+            SET @prepareStatement = CONCAT("DROP DATABASE `", _cursorValue,"`;");
             SELECT @prepareStatement;
             PREPARE stmt FROM @prepareStatement;
             EXECUTE stmt ;
@@ -29,5 +28,8 @@ BEGIN
  END
 
 
-call drop_databases("odb", "");
+
+call drop_databases("seata-order");
+
+DROP DATABASE `seata-order-1`;
 
