@@ -13,10 +13,10 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class
 		, com.alibaba.cloud.seata.GlobalTransactionAutoConfiguration.class})
 @MapperScan("com.xd.example.seata.mapper")
-public class NacosSeataOrderServerApplication {
+public class ShardingNacosSeataOrderServerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(NacosSeataOrderServerApplication.class, args);
+		SpringApplication.run(ShardingNacosSeataOrderServerApplication.class, args);
 	}
 
 }

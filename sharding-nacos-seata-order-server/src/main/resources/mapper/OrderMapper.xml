@@ -3,13 +3,13 @@
 <mapper namespace="OrderMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="Order">
-        <id column="id" property="id" />
-        <result column="user_id" property="userId" />
-        <result column="pay_money" property="payMoney" />
-        <result column="product_id" property="productId" />
-        <result column="status" property="status" />
-        <result column="count" property="count" />
+    <resultMap id="BaseResultMap" type="com.wangtk.example.seata.domain.Order">
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="pay_money" property="payMoney"/>
+        <result column="product_id" property="productId"/>
+        <result column="status" property="status"/>
+        <result column="count" property="count"/>
     </resultMap>
 
 </mapper>

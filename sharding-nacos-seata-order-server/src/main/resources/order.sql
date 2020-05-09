@@ -14,7 +14,7 @@ CREATE TABLE `undo_log` (
   UNIQUE KEY `ux_undo_log` (`xid`,`branch_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 CREATE TABLE `order` (
-  `id` int(20) NOT NULL AUTO_INCREMENT COMMENT '主键Id',
+  `id` int(20) NOT NULL COMMENT '主键Id',
   `user_id` int(20) DEFAULT NULL COMMENT '用户Id',
   `pay_money` decimal(11,0) DEFAULT NULL COMMENT '付款金额',
   `product_id` int(20) DEFAULT NULL COMMENT '商品Id',
