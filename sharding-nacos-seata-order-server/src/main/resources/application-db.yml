@@ -68,8 +68,6 @@ spring:
         password: dianji888
     # 分片规则
     sharding:
-      # 默认数据源
-      default-data-source-name: seata-order-1
       # 默认主键生成策略
       default-key-generator:
         type: SNOWFLAKE
@@ -95,6 +93,8 @@ spring:
       # 具体表策略
       tables:
         # 订单表
+        undo_log:
+          actual-data-nodes: seata-order-$->{0..5}.undo_log
         s_order:
           actual-data-nodes: seata-order-$->{0..5}.s_order
           table-strategy:
