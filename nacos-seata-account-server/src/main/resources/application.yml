@@ -28,6 +28,8 @@ mybatis-plus:
   typeAliasesPackage: com.xd.example.seata.domain
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+server:
+  port: 8080
 ribbon:
   ReadTimeout: 500000
   ConnectTimeout: 500000
