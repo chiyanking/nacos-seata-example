@@ -16,4 +16,6 @@ public interface IOrderService extends IService<Order> {
     void createOrder(Order order);
 
     void resetOrder();
+
+    void createOrderMultiDB(Boolean rollBack);
 }

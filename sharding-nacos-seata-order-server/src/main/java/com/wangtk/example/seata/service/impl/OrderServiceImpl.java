@@ -16,6 +16,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
+
 /**
  * <p>
  * 订单表 服务实现类
@@ -67,22 +69,23 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     @ShardingTransactionType(TransactionType.LOCAL)
     @Transactional
     public void resetOrder() {
-//        for (int i = 0; i < 100; i++) {
-//            SeataOrder order = new SeataOrder();
-//            order.setId(i);
-//            order.setCount(1);
-//            order.setPayMoney(BigDecimal.ONE);
-//            order.setProductId(1);
-//            order.setStatus(0);
-//            saveOrUpdate(order);
-//        }
         remove(Wrappers.emptyWrapper());
         baseMapper.deleteUndoLog();
     }
 
-    public static void main(String[] args) {
-        RootContext.bind("123123123");
-        String unbind = RootContext.unbind();
-        System.out.println(unbind);
+    @Override
+    public void createOrderMultiDB(Boolean rollBack) {
+        for (int i = 0; i < 100; i++) {
+            Order order = new Order();
+            order.setId(i);
+            order.setCount(1);
+            order.setPayMoney(BigDecimal.ONE);
+            order.setProductId(1);
+            order.setStatus(0);
+            saveOrUpdate(order);
+        }
+        if (rollBack) {
+            throw new RuntimeException("回滚事务");
+        }
     }
 }

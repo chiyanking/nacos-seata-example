@@ -41,5 +41,11 @@ public class OrderController {
         orderService.resetOrder();
         return R.builder().msg("重置订单成功").build();
     }
+
+    @PostMapping("/createOrderMultiDB")
+    public R createOrderMultiDB(Boolean rollBack) {
+        orderService.createOrderMultiDB(rollBack);
+        return R.builder().msg("添加成功").build();
+    }
 }
 
