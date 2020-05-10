@@ -74,6 +74,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     }
 
     @Override
+    @ShardingTransactionType(TransactionType.BASE)
     public void createOrderMultiDB(Boolean rollBack) {
         for (int i = 0; i < 100; i++) {
             Order order = new Order();

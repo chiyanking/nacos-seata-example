@@ -17,7 +17,7 @@ spring:
         auto-commit: false
         minimum-idle: 2
         maximum-pool-size: 5
-        driver-class-name: com.mysql.jdbc.Driver
+        driver-class-name: com.mysql.cj.jdbc.Driver
         jdbcUrl: jdbc:mysql://192.168.0.21:3306/seata-order-1?useSSL=false&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT&allowPublicKeyRetrieval=true
         username: root
         password: dianji888
@@ -26,7 +26,7 @@ spring:
         auto-commit: false
         minimum-idle: 2
         maximum-pool-size: 5
-        driver-class-name: com.mysql.jdbc.Driver
+        driver-class-name: com.mysql.cj.jdbc.Driver
         jdbcUrl: jdbc:mysql://192.168.0.21:3306/seata-order-1?useSSL=false&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT&allowPublicKeyRetrieval=true
         username: root
         password: dianji888
@@ -35,7 +35,7 @@ spring:
         auto-commit: false
         minimum-idle: 2
         maximum-pool-size: 5
-        driver-class-name: com.mysql.jdbc.Driver
+        driver-class-name: com.mysql.cj.jdbc.Driver
         jdbcUrl: jdbc:mysql://192.168.0.21:3306/seata-order-2?useSSL=false&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT&allowPublicKeyRetrieval=true
         username: root
         password: dianji888
@@ -44,7 +44,7 @@ spring:
         auto-commit: false
         minimum-idle: 2
         maximum-pool-size: 5
-        driver-class-name: com.mysql.jdbc.Driver
+        driver-class-name: com.mysql.cj.jdbc.Driver
         jdbcUrl: jdbc:mysql://192.168.0.21:3306/seata-order-3?useSSL=false&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT&allowPublicKeyRetrieval=true
         username: root
         password: dianji888
@@ -53,7 +53,7 @@ spring:
         auto-commit: false
         minimum-idle: 2
         maximum-pool-size: 5
-        driver-class-name: com.mysql.jdbc.Driver
+        driver-class-name: com.mysql.cj.jdbc.Driver
         jdbcUrl: jdbc:mysql://192.168.0.21:3306/seata-order-4?useSSL=false&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT&allowPublicKeyRetrieval=true
         username: root
         password: dianji888
@@ -62,7 +62,7 @@ spring:
         auto-commit: false
         minimum-idle: 2
         maximum-pool-size: 5
-        driver-class-name: com.mysql.jdbc.Driver
+        driver-class-name: com.mysql.cj.jdbc.Driver
         jdbcUrl: jdbc:mysql://192.168.0.21:3306/seata-order-5?useSSL=false&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT&allowPublicKeyRetrieval=true
         username: root
         password: dianji888
