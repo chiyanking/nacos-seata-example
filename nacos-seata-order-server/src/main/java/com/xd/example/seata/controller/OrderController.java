@@ -35,11 +35,22 @@ public class OrderController {
         return R.builder().msg("订单创建成功").build();
     }
 
-
     @PostMapping("/reset")
     public R reset() {
         orderService.resetOrder();
         return R.builder().msg("重置订单成功").build();
+    }
+
+    @PostMapping("/testLocalTransaction")
+    public R testLocalTransaction(Boolean rollBack) {
+        orderService.testLocalTransaction(rollBack);
+        return R.builder().msg("调用成功").build();
+    }
+
+    @PostMapping("/testNoTransaction")
+    public R testNoTransaction(Boolean rollBack) {
+        orderService.testNoTransaction(rollBack);
+        return R.builder().msg("调用成功").build();
     }
 }
 

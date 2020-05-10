@@ -12,6 +12,12 @@ import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StopWatch;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <p>
@@ -65,6 +71,52 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
         remove(Wrappers.emptyWrapper());
         baseMapper.deleteUndoLog();
     }
+
+    @Override
+    @Transactional
+    public void testLocalTransaction(Boolean rollBack) {
+        StopWatch stopWatch = new StopWatch("插入时间统计");
+        stopWatch.start();
+        List<Order> orderList = new ArrayList<>();
+        for (int i = 0; i < 500; i++) {
+            Order order = new Order();
+            order.setStatus(1);
+            order.setId(i);
+            order.setCount(i);
+            order.setPayMoney(BigDecimal.ONE);
+            order.setUserId(1);
+            orderList.add(order);
+        }
+        saveBatch(orderList);
+        stopWatch.stop();
+        log.info(stopWatch.toString());
+        if (rollBack) {
+            throw new RuntimeException("asdfasdf");
+        }
+    }
+
+    @Override
+    public void testNoTransaction(Boolean rollBack) {
+        StopWatch stopWatch = new StopWatch("插入时间统计");
+        stopWatch.start();
+        List<Order> orderList = new ArrayList<>();
+        for (int i = 0; i < 500; i++) {
+            Order order = new Order();
+            order.setStatus(1);
+            order.setId(i);
+            order.setCount(i);
+            order.setPayMoney(BigDecimal.ONE);
+            order.setUserId(1);
+            orderList.add(order);
+        }
+        saveBatch(orderList);
+        stopWatch.stop();
+        log.info(stopWatch.toString());
+        if (rollBack) {
+            throw new RuntimeException("asdfasdf");
+        }
+    }
+
 
     public static void main(String[] args) {
         RootContext.bind("123123123");

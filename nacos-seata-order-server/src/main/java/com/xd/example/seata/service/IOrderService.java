@@ -16,4 +16,8 @@ public interface IOrderService extends IService<Order> {
     void createOrder(Order order);
 
     void resetOrder();
+
+    void testLocalTransaction(Boolean rollBack);
+
+    void testNoTransaction(Boolean rollBack);
 }
