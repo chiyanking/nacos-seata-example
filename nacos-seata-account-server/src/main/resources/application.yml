@@ -15,7 +15,7 @@ spring:
       jdbc-url: jdbc:mysql://192.168.0.21:3306/seata_account?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=UTF-8&useSSL=false
       username: root
       password: dianji888
-    driver-class-name: com.mysql.cj.jdbc.Driver
+      driver-class-name: com.mysql.cj.jdbc.Driver
   cloud:
     alibaba:
       seata:
@@ -47,7 +47,7 @@ seata:
   enableAutoDataSourceProxy: false
   service:
     vgroup-mapping:
-      prex_tx_group: default
+      prex_tx_group: default  # TC 集群（必须与seata-server保持一致）
 logging:
   level:
     root: debug
