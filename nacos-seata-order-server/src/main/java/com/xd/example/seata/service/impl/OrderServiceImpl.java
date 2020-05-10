@@ -77,17 +77,15 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     public void testLocalTransaction(Boolean rollBack) {
         StopWatch stopWatch = new StopWatch("插入时间统计");
         stopWatch.start();
-        List<Order> orderList = new ArrayList<>();
-        for (int i = 0; i < 500; i++) {
+        for (int i = 0; i < 200; i++) {
             Order order = new Order();
             order.setStatus(1);
             order.setId(i);
             order.setCount(i);
             order.setPayMoney(BigDecimal.ONE);
             order.setUserId(1);
-            orderList.add(order);
+            save(order);
         }
-        saveBatch(orderList);
         stopWatch.stop();
         log.info(stopWatch.toString());
         if (rollBack) {
@@ -99,17 +97,15 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     public void testNoTransaction(Boolean rollBack) {
         StopWatch stopWatch = new StopWatch("插入时间统计");
         stopWatch.start();
-        List<Order> orderList = new ArrayList<>();
-        for (int i = 0; i < 500; i++) {
+        for (int i = 0; i < 200; i++) {
             Order order = new Order();
             order.setStatus(1);
             order.setId(i);
             order.setCount(i);
             order.setPayMoney(BigDecimal.ONE);
             order.setUserId(1);
-            orderList.add(order);
+            save(order);
         }
-        saveBatch(orderList);
         stopWatch.stop();
         log.info(stopWatch.toString());
         if (rollBack) {
