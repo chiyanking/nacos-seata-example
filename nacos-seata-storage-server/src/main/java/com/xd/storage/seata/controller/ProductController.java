@@ -1,8 +1,8 @@
-package com.xd.example.seata.controller;
+package com.xd.storage.seata.controller;
 
 
-import com.xd.example.seata.service.IProductService;
-import com.xd.example.util.R;
+import com.xd.storage.seata.service.IProductService;
+import com.xd.storage.seata.util.R;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 

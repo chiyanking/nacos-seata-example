@@ -1,6 +1,6 @@
-package com.xd.example.seata.mapper;
+package com.xd.storage.seata.mapper;
 
-import com.xd.example.seata.domain.Product;
+import com.xd.storage.seata.domain.Product;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Param;

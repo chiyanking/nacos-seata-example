@@ -1,4 +1,4 @@
-package com.xd.example.seata.domain;
+package com.xd.storage.seata.domain;
 
 import java.io.Serializable;
 import java.math.BigDecimal;

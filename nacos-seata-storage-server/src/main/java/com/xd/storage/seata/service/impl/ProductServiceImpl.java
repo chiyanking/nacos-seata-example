@@ -1,9 +1,9 @@
-package com.xd.example.seata.service.impl;
+package com.xd.storage.seata.service.impl;
 
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.xd.example.seata.domain.Product;
-import com.xd.example.seata.mapper.ProductMapper;
-import com.xd.example.seata.service.IProductService;
+import com.xd.storage.seata.domain.Product;
+import com.xd.storage.seata.mapper.ProductMapper;
+import com.xd.storage.seata.service.IProductService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import io.seata.core.context.RootContext;
 import io.seata.spring.annotation.GlobalTransactional;

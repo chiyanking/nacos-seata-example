@@ -1,4 +1,4 @@
-package com.xd.example.util;
+package com.xd.storage.seata.util;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

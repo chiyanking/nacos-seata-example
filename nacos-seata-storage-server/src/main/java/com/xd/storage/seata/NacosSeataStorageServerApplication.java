@@ -1,4 +1,4 @@
-package com.xd.example.seata;
+package com.xd.storage.seata;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;

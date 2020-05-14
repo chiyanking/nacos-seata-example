@@ -1,10 +1,10 @@
-package com.xd.example.seata;
+package com.xd.storage.seata;
 
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class NacosSeataStorageServerApplicationTests {
+class NacosSeataAccountServerApplicationTests {
 
 	@Test
 	void contextLoads() {
