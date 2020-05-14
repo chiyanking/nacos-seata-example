@@ -5,7 +5,7 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     hikari:
-      auto-commit: false
+      auto-commit: true
       minimum-idle: 5
       idle-timeout: 60000
       connection-timeout: 30000

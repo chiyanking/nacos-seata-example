@@ -9,6 +9,7 @@ import io.seata.core.context.RootContext;
 import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * <p>
@@ -24,7 +25,8 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
 
 
     @Override
-    @GlobalTransactional(name = "prex-create-order", rollbackFor = Exception.class)
+    @Transactional
+    @GlobalTransactional
     public boolean reduceCount(Integer productId, Integer amount) {
         log.info("商品Id:{},商品数量:{}", productId, amount);
         log.info("当前 XID: {}", RootContext.getXID());

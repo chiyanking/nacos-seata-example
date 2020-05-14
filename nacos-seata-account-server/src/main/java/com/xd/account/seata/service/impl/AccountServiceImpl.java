@@ -9,6 +9,7 @@ import io.seata.core.context.RootContext;
 import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.util.Optional;
@@ -26,7 +27,8 @@ import java.util.Optional;
 public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account> implements IAccountService {
 
     @Override
-    @GlobalTransactional(name = "prex-create-order", rollbackFor = Exception.class)
+    @Transactional
+    @GlobalTransactional
     public boolean reduceBalance(Integer userId, BigDecimal balance) {
 
         log.info("当前 XID: {}", RootContext.getXID());

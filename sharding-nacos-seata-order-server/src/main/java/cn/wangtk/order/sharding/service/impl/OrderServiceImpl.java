@@ -37,7 +37,8 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     private RemoteAccountService remoteAccountService;
 
     @Override
-    @GlobalTransactional(name = "prex-create-order", rollbackFor = Exception.class)
+    @Transactional
+    @GlobalTransactional
     public void createOrder(Order order) {
         log.info("当前 XID: {}", RootContext.getXID());
         log.info("下单开始,用户:{},商品:{},数量:{},金额:{}", order.getUserId(), order.getProductId(), order.getCount(), order.getPayMoney());
