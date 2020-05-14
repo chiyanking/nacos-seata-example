@@ -1,8 +1,8 @@
-package com.xd.example.sharding.controller;
+package cn.wangtk.storage.sharding.controller;
 
 
-import com.xd.example.sharding.service.IProductService;
-import com.xd.example.sharding.util.R;
+import cn.wangtk.storage.sharding.util.R;
+import cn.wangtk.storage.sharding.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 

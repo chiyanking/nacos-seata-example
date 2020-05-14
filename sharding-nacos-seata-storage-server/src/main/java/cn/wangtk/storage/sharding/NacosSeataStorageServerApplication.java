@@ -1,4 +1,4 @@
-package com.xd.example.sharding;
+package cn.wangtk.storage.sharding;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;

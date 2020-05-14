@@ -1,9 +1,9 @@
-package com.xd.example.sharding.service.impl;
+package cn.wangtk.storage.sharding.service.impl;
 
+import cn.wangtk.storage.sharding.domain.Product;
+import cn.wangtk.storage.sharding.mapper.ProductMapper;
+import cn.wangtk.storage.sharding.service.IProductService;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.xd.example.sharding.domain.Product;
-import com.xd.example.sharding.mapper.ProductMapper;
-import com.xd.example.sharding.service.IProductService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import io.seata.core.context.RootContext;
 import io.seata.spring.annotation.GlobalTransactional;

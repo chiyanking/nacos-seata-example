@@ -1,6 +1,6 @@
-package com.xd.example.sharding.service;
+package cn.wangtk.storage.sharding.service;
 
-import com.xd.example.sharding.domain.Product;
+import cn.wangtk.storage.sharding.domain.Product;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

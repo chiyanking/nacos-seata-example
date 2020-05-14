@@ -1,4 +1,4 @@
-package com.xd.example.sharding.config;
+package cn.wangtk.storage.sharding.config;
 
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;

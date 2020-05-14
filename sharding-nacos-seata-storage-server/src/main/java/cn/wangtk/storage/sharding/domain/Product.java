@@ -1,4 +1,4 @@
-package com.xd.example.sharding.domain;
+package cn.wangtk.storage.sharding.domain;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
