@@ -9,7 +9,6 @@ mybatis-plus 3.2.0
 
 整合分布事务demo seata mybatis-plus
 
-
 nacos-seata-order-server  
 nacos-seata-storage-server  
 nacos-seata-account-server  
@@ -20,4 +19,4 @@ sharding-nacos-seata-order-server
 sharding-nacos-seata-storage-server  
 sharding-nacos-seata-account-server  
 
-每个项目下面都有自己需要的sql
+每个module下面都有自己需要的sql
