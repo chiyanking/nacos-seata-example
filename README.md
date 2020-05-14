@@ -8,16 +8,14 @@ SpringBoot 2.1.9
 seata 1.2.0
 mybatis-plus 3.2.0
 
-nacos-seata-order-server
-nacos-seata-storage-server
-nacos-seata-account-server
-
+nacos-seata-order-server  
+nacos-seata-storage-server  
+nacos-seata-account-server  
 
 整合 seata mybatis-plus sharding-jdbc
 
-sharding-nacos-seata-order-server
-sharding-nacos-seata-storage-server
-sharding-nacos-seata-account-server
-
+sharding-nacos-seata-order-server  
+sharding-nacos-seata-storage-server  
+sharding-nacos-seata-account-server  
 
 每个项目下面都有自己需要的sql
