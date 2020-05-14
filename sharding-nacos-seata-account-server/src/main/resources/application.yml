@@ -1,6 +1,6 @@
 spring:
   application:
-    name: nacos-seata-account-server
+    name: sharding-nacos-seata-account
   # 数据源配置
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
@@ -29,7 +29,7 @@ mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 server:
-  port: 8080
+  port: 8084
 ribbon:
   ReadTimeout: 500000
   ConnectTimeout: 500000
