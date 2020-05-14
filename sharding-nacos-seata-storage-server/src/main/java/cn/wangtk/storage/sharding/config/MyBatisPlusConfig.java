@@ -6,6 +6,7 @@ import com.zaxxer.hikari.HikariDataSource;
 import io.seata.rm.datasource.DataSourceProxy;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionTemplate;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -24,6 +25,7 @@ import javax.sql.DataSource;
  * @Version 1.0
  */
 @Configuration
+@MapperScan("cn.wangtk.storage.sharding.mapper")
 public class MyBatisPlusConfig {
 
     /**

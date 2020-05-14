@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
  * @Version 1.0
  */
 @Configuration
-@MapperScan("com.xd.example.seata.mapper")
+@MapperScan("cn.wangtk.account.sharding.mapper")
 public class MyBatisPlusConfig {
     @Bean
     public PaginationInterceptor paginationInterceptor() {

@@ -1,0 +1,121 @@
+spring:
+  shardingsphere:
+    props:
+      # 打印sql
+      sql.show: true
+      check:
+        table:
+          metadata:
+            # 是否在启动时检查分表元数据一致性
+            enabled: false
+    datasource:
+      # 总库
+      names: seata-storage-0,seata-storage-1,seata-storage-2,seata-storage-3,seata-storage-4,seata-storage-5
+      # 数据源
+      seata-storage-0:
+        type: com.zaxxer.hikari.HikariDataSource
+        auto-commit: true
+        minimum-idle: 2
+        maximum-pool-size: 5
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbcUrl: jdbc:mysql://192.168.0.21:3306/seata-storage-0?useSSL=false&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT&allowPublicKeyRetrieval=true
+        username: root
+        password: dianji888
+      seata-storage-1:
+        type: com.zaxxer.hikari.HikariDataSource
+        auto-commit: true
+        minimum-idle: 2
+        maximum-pool-size: 5
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbcUrl: jdbc:mysql://192.168.0.21:3306/seata-storage-1?useSSL=false&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT&allowPublicKeyRetrieval=true
+        username: root
+        password: dianji888
+      seata-storage-2:
+        type: com.zaxxer.hikari.HikariDataSource
+        auto-commit: true
+        minimum-idle: 2
+        maximum-pool-size: 5
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbcUrl: jdbc:mysql://192.168.0.21:3306/seata-storage-2?useSSL=false&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT&allowPublicKeyRetrieval=true
+        username: root
+        password: dianji888
+      seata-storage-3:
+        type: com.zaxxer.hikari.HikariDataSource
+        auto-commit: true
+        minimum-idle: 2
+        maximum-pool-size: 5
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbcUrl: jdbc:mysql://192.168.0.21:3306/seata-storage-3?useSSL=false&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT&allowPublicKeyRetrieval=true
+        username: root
+        password: dianji888
+      seata-storage-4:
+        type: com.zaxxer.hikari.HikariDataSource
+        auto-commit: true
+        minimum-idle: 2
+        maximum-pool-size: 5
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbcUrl: jdbc:mysql://192.168.0.21:3306/seata-storage-4?useSSL=false&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT&allowPublicKeyRetrieval=true
+        username: root
+        password: dianji888
+      seata-storage-5:
+        type: com.zaxxer.hikari.HikariDataSource
+        auto-commit: true
+        minimum-idle: 2
+        maximum-pool-size: 5
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbcUrl: jdbc:mysql://192.168.0.21:3306/seata-storage-5?useSSL=false&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT&allowPublicKeyRetrieval=true
+        username: root
+        password: dianji888
+    # 分片规则
+    sharding:
+      # 默认主键生成策略
+      default-key-generator:
+        type: SNOWFLAKE
+        column: id
+        worker:
+          id: order
+        max:
+          tolerate:
+            time:
+              difference:
+                milliseconds: 1
+
+      # 默认分库策略
+      default-database-strategy:
+        inline:
+          sharding-column: id
+          algorithm-expression: seata-storage-$->{id % 6}
+      #            broadcastTables:
+      #              - o_dict
+      #            # 绑定表关系
+      #            bindingTables:
+      #              - order,o_order_item
+      # 具体表策略
+      tables:
+        # 订单表
+        undo_log:
+          actual-data-nodes: seata-storage-$->{0..5}.undo_log
+        product:
+          actual-data-nodes: seata-storage-$->{0..5}.product
+          table-strategy:
+            inline:
+              sharding-column: id
+              algorithm-expression: product
+        #  订单表详情
+#      binding-tables:
+#        - order
+#      broadcast-tables:
+#        - order
+#        o_order_item:
+#          actual-data-nodes: odb$->{0..35}.o_order_item$->{0..71}
+#          table-strategy:
+#            inline:
+#              sharding-column: order_id
+#              algorithm-expression: o_order_item$->{order_id % 72}
+
+
+
+
+
+
+

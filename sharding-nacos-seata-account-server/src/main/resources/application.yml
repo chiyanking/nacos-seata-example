@@ -1,21 +1,8 @@
 spring:
   application:
     name: sharding-nacos-seata-account
-  # 数据源配置
-  datasource:
-    type: com.zaxxer.hikari.HikariDataSource
-    hikari:
-      auto-commit: false
-      minimum-idle: 5
-      idle-timeout: 60000
-      connection-timeout: 30000
-      max-lifetime: 1800000
-      pool-name: DatebookHikariCP
-      maximum-pool-size: 30
-      jdbc-url: jdbc:mysql://192.168.0.21:3306/seata_account?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=UTF-8&useSSL=false
-      username: root
-      password: dianji888
-      driver-class-name: com.mysql.cj.jdbc.Driver
+  profiles:
+    include: db
   cloud:
     alibaba:
       seata:
@@ -24,8 +11,7 @@ spring:
       discovery:
         server-addr: 192.168.1.53:8848
 mybatis-plus:
-  mapper-locations: classpath:mapper/*.xml
-  typeAliasesPackage: com.xd.example.seata.domain
+  typeAliasesPackage: cn.wangtk.account.sharding.domain
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 server:
