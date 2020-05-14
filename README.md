@@ -1,12 +1,14 @@
 # nacos-seata-exmaple
 
 ## 简介
+版本
+Spring Cloud Greenwich  
+SpringBoot 2.1.9  
+seata 1.2.0  
+mybatis-plus 3.2.0  
+
 整合分布事务demo seata mybatis-plus
 
-Spring Cloud Greenwich
-SpringBoot 2.1.9
-seata 1.2.0
-mybatis-plus 3.2.0
 
 nacos-seata-order-server  
 nacos-seata-storage-server  
