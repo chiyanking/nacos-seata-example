@@ -3,6 +3,7 @@ package com.xd.order.seata.config;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.zaxxer.hikari.HikariDataSource;
 import io.seata.rm.datasource.DataSourceProxy;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,6 +19,7 @@ import javax.sql.DataSource;
  * @Version 1.0
  */
 @Configuration
+@MapperScan("com.xd.order.seata.mapper")
 public class MyBatisPlusConfig {
     /**
      * 从配置文件获取属性构造datasource，注意前缀，这里用的是druid，根据自己情况配置,
