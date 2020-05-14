@@ -3,7 +3,7 @@
 <mapper namespace="OrderMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.wangtk.example.seata.domain.Order">
+    <resultMap id="BaseResultMap" type="com.wangtk.example.sharding.domain.Order">
         <id column="id" property="id"/>
         <result column="user_id" property="userId"/>
         <result column="pay_money" property="payMoney"/>

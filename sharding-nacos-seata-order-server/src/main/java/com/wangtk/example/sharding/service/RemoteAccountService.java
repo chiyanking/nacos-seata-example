@@ -1,6 +1,6 @@
-package com.wangtk.example.seata.service;
+package com.wangtk.example.sharding.service;
 
-import com.wangtk.example.seata.util.R;
+import com.wangtk.example.sharding.util.R;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;

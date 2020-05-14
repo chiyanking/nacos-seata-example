@@ -1,4 +1,4 @@
-package com.wangtk.example.seata.util;
+package com.wangtk.example.sharding.util;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,11 +1,11 @@
-package com.wangtk.example.seata.service.impl;
+package com.wangtk.example.sharding.service.impl;
 
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.wangtk.example.seata.service.IOrderService;
-import com.wangtk.example.seata.service.RemoteAccountService;
-import com.wangtk.example.seata.service.RemoteStorageService;
-import com.wangtk.example.seata.domain.Order;
-import com.wangtk.example.seata.mapper.OrderMapper;
+import com.wangtk.example.sharding.service.IOrderService;
+import com.wangtk.example.sharding.service.RemoteAccountService;
+import com.wangtk.example.sharding.service.RemoteStorageService;
+import com.wangtk.example.sharding.domain.Order;
+import com.wangtk.example.sharding.mapper.OrderMapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import io.seata.core.context.RootContext;
 import io.seata.spring.annotation.GlobalTransactional;

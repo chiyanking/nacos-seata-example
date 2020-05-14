@@ -1,4 +1,4 @@
-package com.wangtk.example.seata;
+package com.wangtk.example.sharding;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;

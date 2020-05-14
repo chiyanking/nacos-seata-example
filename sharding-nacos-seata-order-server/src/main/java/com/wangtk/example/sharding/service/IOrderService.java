@@ -1,6 +1,6 @@
-package com.wangtk.example.seata.service;
+package com.wangtk.example.sharding.service;
 
-import com.wangtk.example.seata.domain.Order;
+import com.wangtk.example.sharding.domain.Order;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

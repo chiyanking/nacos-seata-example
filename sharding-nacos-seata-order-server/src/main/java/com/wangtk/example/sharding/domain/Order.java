@@ -1,4 +1,4 @@
-package com.wangtk.example.seata.domain;
+package com.wangtk.example.sharding.domain;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

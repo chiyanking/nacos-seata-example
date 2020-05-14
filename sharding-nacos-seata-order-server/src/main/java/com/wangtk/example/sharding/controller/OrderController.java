@@ -1,9 +1,9 @@
-package com.wangtk.example.seata.controller;
+package com.wangtk.example.sharding.controller;
 
 
-import com.wangtk.example.seata.domain.Order;
-import com.wangtk.example.seata.service.IOrderService;
-import com.wangtk.example.seata.util.R;
+import com.wangtk.example.sharding.domain.Order;
+import com.wangtk.example.sharding.service.IOrderService;
+import com.wangtk.example.sharding.util.R;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

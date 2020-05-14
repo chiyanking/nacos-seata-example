@@ -1,6 +1,6 @@
-package com.wangtk.example.seata.mapper;
+package com.wangtk.example.sharding.mapper;
 
-import com.wangtk.example.seata.domain.Order;
+import com.wangtk.example.sharding.domain.Order;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Delete;
 
