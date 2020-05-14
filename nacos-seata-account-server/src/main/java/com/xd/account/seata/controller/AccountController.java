@@ -1,8 +1,8 @@
-package com.xd.example.seata.controller;
+package com.xd.account.seata.controller;
 
 
-import com.xd.example.seata.service.IAccountService;
-import com.xd.example.seata.util.R;
+import com.xd.account.seata.util.R;
+import com.xd.account.seata.service.IAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

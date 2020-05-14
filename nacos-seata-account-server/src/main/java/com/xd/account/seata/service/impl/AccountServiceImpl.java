@@ -1,10 +1,10 @@
-package com.xd.example.seata.service.impl;
+package com.xd.account.seata.service.impl;
 
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.xd.example.seata.domain.Account;
-import com.xd.example.seata.mapper.AccountMapper;
-import com.xd.example.seata.service.IAccountService;
+import com.xd.account.seata.domain.Account;
+import com.xd.account.seata.mapper.AccountMapper;
+import com.xd.account.seata.service.IAccountService;
 import io.seata.core.context.RootContext;
 import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;

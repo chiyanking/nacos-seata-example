@@ -1,6 +1,6 @@
-package com.xd.example.seata.service;
+package com.xd.account.seata.service;
 
-import com.xd.example.seata.domain.Account;
+import com.xd.account.seata.domain.Account;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.math.BigDecimal;

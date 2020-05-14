@@ -1,4 +1,4 @@
-package com.xd.example.seata;
+package com.xd.account.seata;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

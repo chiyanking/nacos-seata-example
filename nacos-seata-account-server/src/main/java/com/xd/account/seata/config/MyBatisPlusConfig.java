@@ -1,4 +1,4 @@
-package com.xd.example.seata.config;
+package com.xd.account.seata.config;
 
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;
