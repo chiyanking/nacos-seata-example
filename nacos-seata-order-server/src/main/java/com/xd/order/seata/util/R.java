@@ -1,4 +1,4 @@
-package com.xd.example.seata.util;
+package com.xd.order.seata.util;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,9 +1,9 @@
-package com.xd.example.seata.controller;
+package com.xd.order.seata.controller;
 
 
-import com.xd.example.seata.domain.Order;
-import com.xd.example.seata.service.IOrderService;
-import com.xd.example.seata.util.R;
+import com.xd.order.seata.domain.Order;
+import com.xd.order.seata.service.IOrderService;
+import com.xd.order.seata.util.R;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

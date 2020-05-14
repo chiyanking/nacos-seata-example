@@ -1,6 +1,6 @@
-package com.xd.example.seata.service;
+package com.xd.order.seata.service;
 
-import com.xd.example.seata.domain.Order;
+import com.xd.order.seata.domain.Order;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

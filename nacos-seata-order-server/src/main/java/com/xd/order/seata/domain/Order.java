@@ -1,4 +1,4 @@
-package com.xd.example.seata.domain;
+package com.xd.order.seata.domain;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

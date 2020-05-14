@@ -1,12 +1,12 @@
-package com.xd.example.seata.service.impl;
+package com.xd.order.seata.service.impl;
 
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.xd.example.seata.domain.Order;
-import com.xd.example.seata.mapper.OrderMapper;
-import com.xd.example.seata.service.IOrderService;
+import com.xd.order.seata.domain.Order;
+import com.xd.order.seata.mapper.OrderMapper;
+import com.xd.order.seata.service.IOrderService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.xd.example.seata.service.RemoteAccountService;
-import com.xd.example.seata.service.RemoteStorageService;
+import com.xd.order.seata.service.RemoteAccountService;
+import com.xd.order.seata.service.RemoteStorageService;
 import io.seata.core.context.RootContext;
 import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
@@ -16,8 +16,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StopWatch;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * <p>

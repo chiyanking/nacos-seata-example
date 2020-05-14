@@ -1,6 +1,6 @@
-package com.xd.example.seata.service;
+package com.xd.order.seata.service;
 
-import com.xd.example.seata.util.R;
+import com.xd.order.seata.util.R;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;

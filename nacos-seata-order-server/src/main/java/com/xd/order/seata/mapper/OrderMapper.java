@@ -1,9 +1,8 @@
-package com.xd.example.seata.mapper;
+package com.xd.order.seata.mapper;
 
-import com.xd.example.seata.domain.Order;
+import com.xd.order.seata.domain.Order;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Select;
 
 /**
  * <p>

@@ -1,4 +1,4 @@
-package com.xd.example.seata.config;
+package com.xd.order.seata.config;
 
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.zaxxer.hikari.HikariDataSource;
