@@ -13,7 +13,8 @@
         <spring-boot.version>2.1.9.RELEASE</spring-boot.version>
         <spring-cloud-alibaba.version>2.1.1.RELEASE</spring-cloud-alibaba.version>
         <spring-cloud.version>Greenwich.SR3</spring-cloud.version>
-        <sharding-sphere.version>4.1.0</sharding-sphere.version>
+        <!--                <sharding-sphere.version>4.1.0</sharding-sphere.version>-->
+        <sharding-sphere.version>5.0.0-RC1-SNAPSHOT</sharding-sphere.version>
     </properties>
 
     <modules>
@@ -21,6 +22,8 @@
         <module>nacos-seata-storage-server</module>
         <module>nacos-seata-account-server</module>
         <module>sharding-nacos-seata-order-server</module>
+        <module>sharding-nacos-seata-storage-server</module>
+        <module>sharding-nacos-seata-account-server</module>
     </modules>
 
     <dependencyManagement>
