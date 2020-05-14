@@ -1,6 +1,7 @@
 package cn.wangtk.order.sharding.config;
 
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -12,6 +13,7 @@ import org.springframework.context.annotation.Configuration;
  * @Version 1.0
  */
 @Configuration
+@MapperScan("cn.wangtk.order.sharding.mapper")
 public class MyBatisPlusConfig {
 
     @Bean
