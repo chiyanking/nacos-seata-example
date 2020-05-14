@@ -28,7 +28,7 @@ public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account> impl
 
     @Override
     @Transactional
-    @GlobalTransactional
+//    @GlobalTransactional
     public boolean reduceBalance(Integer userId, BigDecimal balance) {
 
         log.info("当前 XID: {}", RootContext.getXID());

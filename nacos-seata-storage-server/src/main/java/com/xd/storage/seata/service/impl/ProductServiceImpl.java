@@ -26,7 +26,7 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
 
     @Override
     @Transactional
-    @GlobalTransactional
+//    @GlobalTransactional
     public boolean reduceCount(Integer productId, Integer amount) {
         log.info("商品Id:{},商品数量:{}", productId, amount);
         log.info("当前 XID: {}", RootContext.getXID());
