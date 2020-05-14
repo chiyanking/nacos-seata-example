@@ -14,7 +14,7 @@ spring:
       # 数据源
       seata-order-0:
         type: com.zaxxer.hikari.HikariDataSource
-        auto-commit: false
+        auto-commit: true
         minimum-idle: 2
         maximum-pool-size: 5
         driver-class-name: com.mysql.cj.jdbc.Driver
@@ -23,7 +23,7 @@ spring:
         password: dianji888
       seata-order-1:
         type: com.zaxxer.hikari.HikariDataSource
-        auto-commit: false
+        auto-commit: true
         minimum-idle: 2
         maximum-pool-size: 5
         driver-class-name: com.mysql.cj.jdbc.Driver
@@ -32,7 +32,7 @@ spring:
         password: dianji888
       seata-order-2:
         type: com.zaxxer.hikari.HikariDataSource
-        auto-commit: false
+        auto-commit: true
         minimum-idle: 2
         maximum-pool-size: 5
         driver-class-name: com.mysql.cj.jdbc.Driver
@@ -41,7 +41,7 @@ spring:
         password: dianji888
       seata-order-3:
         type: com.zaxxer.hikari.HikariDataSource
-        auto-commit: false
+        auto-commit: true
         minimum-idle: 2
         maximum-pool-size: 5
         driver-class-name: com.mysql.cj.jdbc.Driver
@@ -50,7 +50,7 @@ spring:
         password: dianji888
       seata-order-4:
         type: com.zaxxer.hikari.HikariDataSource
-        auto-commit: false
+        auto-commit: true
         minimum-idle: 2
         maximum-pool-size: 5
         driver-class-name: com.mysql.cj.jdbc.Driver
@@ -59,7 +59,7 @@ spring:
         password: dianji888
       seata-order-5:
         type: com.zaxxer.hikari.HikariDataSource
-        auto-commit: false
+        auto-commit: true
         minimum-idle: 2
         maximum-pool-size: 5
         driver-class-name: com.mysql.cj.jdbc.Driver

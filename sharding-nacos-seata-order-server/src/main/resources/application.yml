@@ -1,6 +1,6 @@
 spring:
   application:
-    name: sharding-nacos-seata-order-server
+    name: sharding-nacos-seata-order
   profiles:
     include: db
   # 数据源配置

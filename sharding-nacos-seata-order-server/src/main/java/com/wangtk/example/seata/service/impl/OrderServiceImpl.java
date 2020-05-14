@@ -75,15 +75,16 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
 
     @Override
     @ShardingTransactionType(TransactionType.BASE)
+    @Transactional
     public void createOrderMultiDB(Boolean rollBack) {
-        for (int i = 0; i < 100; i++) {
+        for (int i = 1; i < 200; i++) {
             Order order = new Order();
             order.setId(i);
             order.setCount(1);
             order.setPayMoney(BigDecimal.ONE);
             order.setProductId(1);
             order.setStatus(0);
-            saveOrUpdate(order);
+            save(order);
         }
         if (rollBack) {
             throw new RuntimeException("回滚事务");

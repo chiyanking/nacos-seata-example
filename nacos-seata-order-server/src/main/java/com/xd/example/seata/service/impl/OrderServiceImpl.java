@@ -74,10 +74,11 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
 
     @Override
     @Transactional
+    @GlobalTransactional(name = "prex-create-order", rollbackFor = Exception.class)
     public void testLocalTransaction(Boolean rollBack) {
         StopWatch stopWatch = new StopWatch("插入时间统计");
         stopWatch.start();
-        for (int i = 0; i < 200; i++) {
+        for (int i = 1; i < 6; i++) {
             Order order = new Order();
             order.setStatus(1);
             order.setId(i);
@@ -97,7 +98,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     public void testNoTransaction(Boolean rollBack) {
         StopWatch stopWatch = new StopWatch("插入时间统计");
         stopWatch.start();
-        for (int i = 0; i < 200; i++) {
+        for (int i = 1; i < 6; i++) {
             Order order = new Order();
             order.setStatus(1);
             order.setId(i);
