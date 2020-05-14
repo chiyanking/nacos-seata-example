@@ -1,9 +1,9 @@
-package com.wangtk.example.sharding.controller;
+package cn.wangtk.order.sharding.controller;
 
 
-import com.wangtk.example.sharding.domain.Order;
-import com.wangtk.example.sharding.service.IOrderService;
-import com.wangtk.example.sharding.util.R;
+import cn.wangtk.order.sharding.domain.Order;
+import cn.wangtk.order.sharding.service.IOrderService;
+import cn.wangtk.order.sharding.util.R;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

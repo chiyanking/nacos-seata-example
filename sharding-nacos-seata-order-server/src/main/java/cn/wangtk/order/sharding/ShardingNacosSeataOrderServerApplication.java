@@ -1,4 +1,4 @@
-package com.wangtk.example.sharding;
+package cn.wangtk.order.sharding;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;

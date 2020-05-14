@@ -1,4 +1,4 @@
-package com.wangtk.example.sharding.config;
+package cn.wangtk.order.sharding.config;
 
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import org.springframework.context.annotation.Bean;

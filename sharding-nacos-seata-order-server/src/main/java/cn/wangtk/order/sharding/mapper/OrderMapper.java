@@ -1,6 +1,6 @@
-package com.wangtk.example.sharding.mapper;
+package cn.wangtk.order.sharding.mapper;
 
-import com.wangtk.example.sharding.domain.Order;
+import cn.wangtk.order.sharding.domain.Order;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Delete;
 

@@ -1,4 +1,4 @@
-package com.wangtk.example.sharding.util;
+package cn.wangtk.order.sharding.util;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,6 +1,6 @@
-package com.wangtk.example.sharding.service;
+package cn.wangtk.order.sharding.service;
 
-import com.wangtk.example.sharding.domain.Order;
+import cn.wangtk.order.sharding.domain.Order;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
