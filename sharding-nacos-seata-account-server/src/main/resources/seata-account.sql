@@ -20,5 +20,7 @@ CREATE TABLE `account` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
+-- 插入到seata-account-0中
+INSERT INTO `account`(`id`, `user_id`, `balance`) VALUES (1, 1, 200);
 SET FOREIGN_KEY_CHECKS = 1;
 

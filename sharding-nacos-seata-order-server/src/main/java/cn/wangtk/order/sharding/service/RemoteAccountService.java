@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.math.BigDecimal;
 
-@FeignClient(value = "nacos-seata-account-server")
+@FeignClient(value = "sharding-nacos-seata-account")
 public interface RemoteAccountService {
 
     /**

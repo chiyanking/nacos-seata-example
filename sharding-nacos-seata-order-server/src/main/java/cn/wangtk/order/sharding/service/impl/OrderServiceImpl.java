@@ -79,7 +79,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     public void createOrderMultiDB(Boolean rollBack) {
         for (int i = 1; i < 200; i++) {
             Order order = new Order();
-            order.setId(i);
+            order.setId(Long.valueOf(i));
             order.setCount(1);
             order.setPayMoney(BigDecimal.ONE);
             order.setProductId(1);

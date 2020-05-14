@@ -22,4 +22,8 @@ CREATE TABLE `product` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='仓储服务';
 
+-- 插入到 seata-storage-0
+INSERT INTO `product`(`id`, `product_id`, `price`, `count`) VALUES (1, 1, 100, 100);
+INSERT INTO `product`(`id`, `product_id`, `price`, `count`) VALUES (2, 2, 100, 100);
+
 SET FOREIGN_KEY_CHECKS = 1;

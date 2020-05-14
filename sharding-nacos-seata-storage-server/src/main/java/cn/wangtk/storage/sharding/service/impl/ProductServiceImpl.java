@@ -45,7 +45,7 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
 
     public void checkStock(Integer productId, Integer requiredAmount) {
         log.info("检查 {} 库存", productId);
-        Integer count = baseMapper.selectOne(Wrappers.<Product>lambdaQuery().select(Product::getCount).eq(Product::getProductId, productId)).getCount();
+        Integer count = baseMapper.selectCount(Wrappers.<Product>lambdaQuery().select(Product::getCount).eq(Product::getProductId, productId));
         System.out.println(count);
         if (count < requiredAmount) {
             log.warn("{} 库存不足，当前库存:{}", productId, count);

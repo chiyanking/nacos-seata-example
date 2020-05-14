@@ -31,7 +31,7 @@ public class Order implements Serializable {
      * 主键Id
      */
     @TableId(value = "id", type = IdType.ID_WORKER)
-    private Integer id;
+    private Long id;
 
     /**
      * 用户Id
