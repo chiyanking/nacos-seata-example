@@ -1,8 +1,8 @@
-package com.xd.example.sharding.controller;
+package cn.wangtk.account.sharding.controller;
 
 
-import com.xd.example.sharding.service.IAccountService;
-import com.xd.example.sharding.util.R;
+import cn.wangtk.account.sharding.service.IAccountService;
+import cn.wangtk.account.sharding.util.R;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

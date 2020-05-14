@@ -1,10 +1,10 @@
-package com.xd.example.sharding.service.impl;
+package cn.wangtk.account.sharding.service.impl;
 
+import cn.wangtk.account.sharding.domain.Account;
+import cn.wangtk.account.sharding.mapper.AccountMapper;
+import cn.wangtk.account.sharding.service.IAccountService;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.xd.example.sharding.domain.Account;
-import com.xd.example.sharding.mapper.AccountMapper;
-import com.xd.example.sharding.service.IAccountService;
 import io.seata.core.context.RootContext;
 import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;

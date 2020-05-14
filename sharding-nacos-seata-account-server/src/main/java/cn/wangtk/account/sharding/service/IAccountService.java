@@ -1,6 +1,6 @@
-package com.xd.example.sharding.service;
+package cn.wangtk.account.sharding.service;
 
-import com.xd.example.sharding.domain.Account;
+import cn.wangtk.account.sharding.domain.Account;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.math.BigDecimal;

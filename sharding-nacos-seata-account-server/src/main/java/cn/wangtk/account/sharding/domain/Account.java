@@ -1,4 +1,4 @@
-package com.xd.example.sharding.domain;
+package cn.wangtk.account.sharding.domain;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

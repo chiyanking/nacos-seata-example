@@ -1,6 +1,6 @@
-package com.xd.example.sharding.mapper;
+package cn.wangtk.account.sharding.mapper;
 
-import com.xd.example.sharding.domain.Account;
+import cn.wangtk.account.sharding.domain.Account;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Param;
