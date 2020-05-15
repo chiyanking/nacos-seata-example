@@ -1,0 +1,12 @@
+version: "3.4"
+services:
+  seata-server:
+    image: harbor.daishub.com/kangaroo/kangaroo-seata:latest
+    hostname: seata-server
+    ports:
+      - "8091:8091"
+    volumes:
+      - ./conf:/opt/seata/conf/
+    environment:
+      - SEATA_IP=192.168.2.70
+      - SEATA_PORT=8091
