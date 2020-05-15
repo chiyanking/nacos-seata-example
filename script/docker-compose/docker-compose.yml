@@ -6,7 +6,8 @@ services:
     ports:
       - "8091:8091"
     volumes:
-      - ./conf:/opt/seata/conf/
+      - ./conf/registry.conf:/opt/seata/conf/registry.conf
+      - ./conf/file.conf:/opt/seata/conf/file.conf
     environment:
-      - SEATA_IP=192.168.2.70
+#      - SEATA_IP=192.168.2.73
       - SEATA_PORT=8091
