@@ -26,6 +26,7 @@
         <module>sharding-nacos-seata-storage-server</module>
         <module>sharding-nacos-seata-account-server</module>
         <module>netty-exmaple</module>
+        <module>spring-boot-security</module>
     </modules>
 
     <dependencyManagement>
