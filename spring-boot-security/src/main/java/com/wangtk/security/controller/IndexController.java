@@ -6,14 +6,12 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 @RestController
-public class LoginController {
-
+public class IndexController {
     @Resource
-    IndexController indexController;
+    LoginController loginController;
 
-    @GetMapping("login")
-
-    public String login() {
+    @GetMapping("index")
+    public String index() {
         return "";
     }
 
