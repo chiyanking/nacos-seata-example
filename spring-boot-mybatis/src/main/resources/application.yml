@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: spring-boot-mybatis
+  datasource:
+    url: jdbc:mysql://192.168.0.21:3306/kangaroo-user?characterEncoding=utf8&autoReconnect=true&useSSL=false&allowMultiQueries=true&serverTimezone=GMT%2b8
+    username: developer
+    password: uX%CU9CS
+    hikari:
+      max-lifetime: 1765000
+      connection-test-query: SELECT 1 FROM DUAL
+      connection-timeout: 30000
+      maximum-pool-size: 20
+      minimum-idle: 3
+      data-source-properties:
+        useInformationSchema: true
+server:
+  port: 8097
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  type-aliases-package: com.wangtk.mybatis.entity
+  mapper-locations: mapper/*.xml
