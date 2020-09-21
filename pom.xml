@@ -28,6 +28,7 @@
         <module>netty-exmaple</module>
         <module>spring-boot-security</module>
         <module>spring-boot-mybatis</module>
+        <module>spring-boot-ribbon</module>
     </modules>
 
     <dependencyManagement>
