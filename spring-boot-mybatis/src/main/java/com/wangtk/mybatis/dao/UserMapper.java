@@ -1,6 +1,7 @@
 package com.wangtk.mybatis.dao;
 
 import com.wangtk.mybatis.entity.UserDO;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -17,6 +18,7 @@ public interface UserMapper {
 
     UserDO getById(Long userId);
 
+    List<UserDO> getListByOrgId(@Param("orgId") Long orgId);
 
     List<UserDO> getAll();
 }

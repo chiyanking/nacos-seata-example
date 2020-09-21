@@ -9,4 +9,12 @@
         SELECT * FROM user limit 1,10
     </select>
 
+    <select id="getListByOrgId" resultType="com.wangtk.mybatis.entity.UserDO">
+        SELECT * FROM `user`
+        <where>
+            <if test="orgId!=null">
+                and org_id = #{orgId}
+            </if>
+        </where>
+    </select>
 </mapper>
