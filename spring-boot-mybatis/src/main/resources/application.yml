@@ -19,5 +19,6 @@ server:
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   type-aliases-package: com.wangtk.mybatis.entity
   mapper-locations: mapper/*.xml
