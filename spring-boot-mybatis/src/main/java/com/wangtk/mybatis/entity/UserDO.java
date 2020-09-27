@@ -1,5 +1,8 @@
 package com.wangtk.mybatis.entity;
 
+import lombok.Data;
+
+@Data
 public class UserDO {
 
     /**

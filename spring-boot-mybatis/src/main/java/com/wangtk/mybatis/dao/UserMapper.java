@@ -16,6 +16,8 @@ import java.util.List;
 
 public interface UserMapper {
 
+    Boolean updateById(@Param("name") String name, @Param("id") Long id);
+
     UserDO getById(Long userId);
 
     List<UserDO> getListByOrgId(@Param("orgId") Long orgId);

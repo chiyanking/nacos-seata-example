@@ -21,5 +21,11 @@ public class UserMapperTest extends BaseTest {
         List<UserDO> userLists;
         userLists = userService.getListByOrgId(2l);
         System.out.println(userLists);
+        Boolean update = userMapper.updateById("张三李四", userLists.get(0).getId());
+        userLists = userService.getListByOrgId(2l);
+        System.out.println(update);
+
+
+
     }
 }
