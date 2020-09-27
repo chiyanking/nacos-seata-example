@@ -10,13 +10,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Slf4j
-@Component("/user")
-public class UserController implements Controller {
+@Component("/testModelView")
+public class TestMvController implements Controller {
     @Override
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
         log.info("日志信息");
 
-        return new ModelAndView();
+        return new ModelAndView("/testParam");
     }
 }
