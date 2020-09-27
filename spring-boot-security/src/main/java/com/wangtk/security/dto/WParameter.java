@@ -9,6 +9,6 @@ public class WParameter {
         System.out.println("初始化参数");
     }
 
-    private String name;
-    private String value;
+    private String testName;
+    private String testValue;
 }

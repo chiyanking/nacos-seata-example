@@ -13,7 +13,7 @@ public class IndexController implements InitializingBean {
     }
 
     @Resource
-    LoginController loginController;
+    TestParamController testParamController;
 
     @GetMapping("index")
     public String index() {
