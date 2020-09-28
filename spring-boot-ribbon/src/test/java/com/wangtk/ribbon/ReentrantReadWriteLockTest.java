@@ -8,6 +8,8 @@ public class ReentrantReadWriteLockTest {
 
         ReentrantReadWriteLock reentrantReadWriteLock = new ReentrantReadWriteLock(true);
         ReentrantReadWriteLock.ReadLock readLock = reentrantReadWriteLock.readLock();
+        readLock.lock();
+        readLock.unlock();
 
         ReentrantReadWriteLock.WriteLock writeLock = reentrantReadWriteLock.writeLock();
         writeLock.lock();

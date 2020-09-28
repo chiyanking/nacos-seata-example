@@ -5,6 +5,9 @@ import rx.Observable;
 import rx.Observer;
 import rx.Subscriber;
 
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
+
 public class ObservableTestTest {
 
 
@@ -98,7 +101,7 @@ public class ObservableTestTest {
     }
 
     @Test
-    public void testRepeat() {
+    public void testRepeat() throws ExecutionException, InterruptedException {
         String[] items = {"just1", "just2", "just3", "just4", "just5", "just6"};
 
         Observable<String> myObservable = Observable.from(items).repeat(2);
@@ -122,6 +125,21 @@ public class ObservableTestTest {
         };
 
         myObservable.subscribe(mySubscriber);
+
+
+        Future tFuture = Observable.defer(() -> {
+            return Observable.unsafeCreate(new Observable.OnSubscribe<Object>() {
+                @Override
+                public void call(Subscriber<? super Object> subscriber) {
+                    subscriber.onStart();
+                    subscriber.onNext("123");
+                    subscriber.onCompleted();
+                }
+            });
+        }).toBlocking().toFuture();
+
+
+        tFuture.get();
     }
 
 }
