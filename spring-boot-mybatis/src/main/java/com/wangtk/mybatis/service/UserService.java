@@ -16,6 +16,7 @@ public class UserService {
     @Transactional
     public List<UserDO> getListByOrgId(Long orgId) {
         userMapper.getListByOrgId(orgId);
+        userMapper.updateById(userMapper.getListByOrgId(orgId).get(0).getName(), orgId);
         return userMapper.getListByOrgId(orgId);
     }
 
