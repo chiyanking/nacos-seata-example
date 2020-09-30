@@ -14,7 +14,7 @@
     </select>
 
     <update id="updateById">
-        update `user` set name = #{name} WHERE id=#{id}; <!-- #{xxx} xxx为类中的数据域名称 -->
+        update `user` set name = #{name} WHERE org_id=#{orgId}; <!-- #{xxx} xxx为类中的数据域名称 -->
     </update>
 
 

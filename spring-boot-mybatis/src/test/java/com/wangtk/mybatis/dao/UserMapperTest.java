@@ -1,5 +1,6 @@
 package com.wangtk.mybatis.dao;
 
+import com.alibaba.fastjson.JSON;
 import com.wangtk.mybatis.BaseTest;
 import com.wangtk.mybatis.entity.UserDO;
 import com.wangtk.mybatis.service.UserService;
@@ -12,20 +13,17 @@ public class UserMapperTest extends BaseTest {
 
 
     @Resource
-    UserMapper userMapper;
-    @Resource
     UserService userService;
 
     @Test
     public void testFindLastLoginDateByOrgId() {
-        List<UserDO> userLists;
-        userLists = userService.getListByOrgId(2l);
-        System.out.println(userLists);
-        Boolean update = userMapper.updateById("张三李四", userLists.get(0).getId());
-        userLists = userService.getListByOrgId(2l);
-        System.out.println(update);
+        List<UserDO> userLists = userService.getListByOrgId(2l);
+        System.out.println(JSON.toJSONString(userLists));
+    }
 
 
-
+    @Test
+    public void testUpdateUserNameByOrgId() {
+        userService.updateName(2l, "李四张三");
     }
 }

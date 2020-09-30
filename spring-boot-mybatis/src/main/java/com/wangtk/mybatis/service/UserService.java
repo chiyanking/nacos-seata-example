@@ -8,7 +8,6 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Resource;
 import java.util.List;
 
-@Transactional
 @Component
 public class UserService {
     @Resource
@@ -18,5 +17,11 @@ public class UserService {
     public List<UserDO> getListByOrgId(Long orgId) {
         userMapper.getListByOrgId(orgId);
         return userMapper.getListByOrgId(orgId);
+    }
+
+    //    @Transactional
+    public void updateName(Long orgId, String name) {
+        userMapper.updateById(name, orgId);
+        userMapper.updateById(name, orgId);
     }
 }
