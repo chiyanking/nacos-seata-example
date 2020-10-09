@@ -18,7 +18,6 @@ public class NIOServer {
     public void initServer(int port) {
         // 获得一个ServerSocket通道
         ServerSocketChannel serverChannel = ServerSocketChannel.open();
-
         serverChannel.configureBlocking(false);
         serverChannel.socket().bind(new InetSocketAddress(port));
         this.selector = Selector.open();

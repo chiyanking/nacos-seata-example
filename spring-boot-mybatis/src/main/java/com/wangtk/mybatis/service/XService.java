@@ -10,6 +10,9 @@ import javax.annotation.Resource;
 @Transactional
 public class XService {
 
+    public XService() {
+        System.out.println("初始化 XService");
+    }
 
     @Resource
     YService yService;

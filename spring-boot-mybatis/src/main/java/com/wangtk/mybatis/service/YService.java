@@ -8,6 +8,11 @@ import javax.annotation.Resource;
 @Component
 @Transactional
 public class YService {
+
+    public YService() {
+        System.out.println("初始化 YService");
+    }
+
     @Resource
     XService xService;
 
