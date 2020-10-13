@@ -7,7 +7,7 @@ public class ApplicationContextTest {
 
 
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(SecurityServerApplication.class);
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MvcServerApplication.class);
         IndexController bean = applicationContext.getBean(IndexController.class);
         bean.index();
     }

@@ -29,6 +29,7 @@
         <module>spring-boot-mvc</module>
         <module>spring-boot-mybatis</module>
         <module>spring-boot-ribbon</module>
+        <module>spring-boot-security</module>
     </modules>
 
     <dependencyManagement>
