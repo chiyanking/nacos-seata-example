@@ -9,9 +9,7 @@ import lombok.SneakyThrows;
 
 import java.net.InetSocketAddress;
 
-public class EchoServer {
-    private final int port = 80;
-
+public class  EchoServer {
     public static void main(String[] args) throws Exception {
         if (args.length != 1) {
             System.err.println(
@@ -19,11 +17,11 @@ public class EchoServer {
                             " <port>");
         }
 //        int port = Integer.parseInt(args[0]);
-        new EchoServer().start();
+        new EchoServer().start(8899);
     }
 
     @SneakyThrows
-    private void start() {
+    private void start(int port) {
         final EchoServerHandler echoServerHandler = new EchoServerHandler();
         EventLoopGroup group = new NioEventLoopGroup();
         ServerBootstrap bootstrap = new ServerBootstrap();
@@ -35,6 +33,7 @@ public class EchoServer {
                     .childHandler(new ChannelInitializer<SocketChannel>() {
 
                         protected void initChannel(SocketChannel socketChannel) throws Exception {
+                            socketChannel.pipeline().addLast(new MyDecoder());
                             socketChannel.pipeline().addLast(echoServerHandler);
                         }
                     });

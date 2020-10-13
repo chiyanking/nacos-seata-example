@@ -1,6 +1,5 @@
 package cn.wangtk.jdk;
 
-import java.io.DataInputStream;
 import java.io.InputStream;
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
@@ -20,9 +19,8 @@ public class BIOServer {
             System.out.println("连接已经建立");
             InputStream inputStream = socket.getInputStream();
             System.out.println("获取输入流");
-            DataInputStream dataInputStream = new DataInputStream(inputStream);
             byte[] bytes = new byte[2048];
-            while (dataInputStream.read(bytes) >= 0) {
+            while (inputStream.read(bytes) >= 0) {
                 System.out.println(new String(bytes, "utf-8"));
             }
         }

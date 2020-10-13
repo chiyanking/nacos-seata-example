@@ -71,7 +71,7 @@ public class NIOServer {
 
     public static void main(String[] args) {
         NIOServer server = new NIOServer();
-        server.initServer(8989);
+        server.initServer(8899);
         server.listen();
     }
 

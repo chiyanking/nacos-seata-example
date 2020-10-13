@@ -9,4 +9,9 @@ public class DiscardServerHandler extends ChannelInboundHandlerAdapter {
         ctx.write(msg); // (1)
         ctx.flush(); // (2)
     }
+
+    @Override
+    public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
+        System.out.println("收到用户事件");
+    }
 }
