@@ -116,32 +116,24 @@ public class LongestPalindrome {
      * .*b*
      * a*b*
      * c*b*
-     * <p>
-     * <p>
-     * <p>
      * abvnsdfkjqwer
      * a*b
      * a*ab
-     * <p>
      * aaaaaaaab
-     * a*b
-     * a*ab
-     * <p>
-     * <p>
      * abvnsdfkjqwer
      * .*
-     * <p>
-     * <p>
-     * <p>
      * aaabc
      * b.a*
      * aaabca
      * a*b.a*
-     * <p>
-     * <p>
-     * 3
+     *
      * aaabcaaa
-     * ab.a*
+     * a*.a*
+     *
+     * asdfiqwerb
+     * .*b
+     *
+     *
      */
 
     public boolean isMatch(String s, String p) {
@@ -152,7 +144,6 @@ public class LongestPalindrome {
         } else {
             return isFirstMath && isMatch(s.substring(1), p.substring(1));
         }
-
     }
 
     public String longestCommonPrefix(String[] strs) {
