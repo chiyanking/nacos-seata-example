@@ -455,6 +455,11 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V>
                              last != null;
                              last = last.next) {
                             int k = last.hash & sizeMask;
+                            // 找到链表最后一个位置k（后面的所有的节点经过hash之后都相同）那么直接将这个链表这个链表位置k后面的所有节点直接复制到新的newTable中
+                            // A和B表示hash后放在 原来位置 和 原来位置+原数组长度
+                            // 有这个一个 链表  n(A)->n(B)->n(A)->n(B)->n(B)->n(A)->n(A)->n(A)->n(A)->n(A)->n(A)->n(A)
+                            // 最后这个 lastIdx = 5 ；lastRun = 数组的第5个元素
+                            // 下一个for循环直接重新计算 这个链表 从头节点到第五个元素重新计算hash放入到对应的位置
                             if (k != lastIdx) {
                                 lastIdx = k;
                                 lastRun = last;

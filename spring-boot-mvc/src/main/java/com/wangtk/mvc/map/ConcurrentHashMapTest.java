@@ -20,7 +20,7 @@ class HashConflict {
 
     @Override
     public int hashCode() {
-        return value % 3;
+        return value % 32;
     }
 
     @Override
