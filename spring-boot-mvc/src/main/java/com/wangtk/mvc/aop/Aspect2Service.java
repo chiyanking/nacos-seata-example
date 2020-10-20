@@ -9,14 +9,14 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Aspect
 @Component
-public class AspectService {
-    @Pointcut("execution(public * com.wangtk.mvc..*(..))")
-    public void serviceCache() {
+public class Aspect2Service {
+    @Pointcut("execution(public * com.wangtk.mvc.service..*(..))")
+    public void logService() {
     }
 
-    @Before("serviceCache()")
-    public void doAccessCheck() {
-        log.info("发送数据");
+    @Before("logService()")
+    public void doLogService() {
+        log.info("log service !");
     }
 
 }
