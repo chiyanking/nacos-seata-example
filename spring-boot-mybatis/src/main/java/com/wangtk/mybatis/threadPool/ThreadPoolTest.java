@@ -17,11 +17,12 @@ public class ThreadPoolTest {
         }
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(5, 10, 300, TimeUnit.SECONDS, new ArrayBlockingQueue(100));
         threadPoolExecutor.execute(() -> {
+            ThreadLocal<Integer> localName = new ThreadLocal();
+            localName.set(100000);
+            localName.get();
             System.out.println("中文地址");
             System.out.println("地址信息");
         });
-
-
     }
 
 }

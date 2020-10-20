@@ -5,6 +5,6 @@ import java.lang.annotation.Retention;
 
 @Inherited
 @Retention(java.lang.annotation.RetentionPolicy.RUNTIME)
-public @interface MyAnnotation {
+public @interface CacheAnnotation {
     String value();
 }

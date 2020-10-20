@@ -23,6 +23,11 @@ public class IndexController implements InitializingBean {
         return indexService.getIndexService();
     }
 
+    @GetMapping("indexWithoutAop")
+    public String indexWithoutAop() {
+        return indexService.indexWithoutAop();
+    }
+
     @Override
     public void afterPropertiesSet() throws Exception {
         System.out.println("set name");
