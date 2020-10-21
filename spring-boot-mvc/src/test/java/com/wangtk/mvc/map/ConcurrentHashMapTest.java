@@ -4,6 +4,23 @@ import org.junit.Test;
 
 public class ConcurrentHashMapTest {
 
+    class HashConflict {
+        private Integer value;
+
+        public HashConflict(Integer value) {
+            this.value = value;
+        }
+
+        @Override
+        public int hashCode() {
+            return value % 4;
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            return value.equals(obj);
+        }
+    }
 
     @Test
     public void testConflict() {
@@ -57,21 +74,27 @@ public class ConcurrentHashMapTest {
 
     }
 
-    class HashConflict {
-        private Integer value;
+    @Test
+    public void testList() throws InterruptedException {
+        java.util.concurrent.ConcurrentHashMap<HashConflict, Integer> hashMap = new java.util.concurrent.ConcurrentHashMap<>(2);
 
-        public HashConflict(Integer value) {
-            this.value = value;
-        }
+        Thread thread1 = new Thread(() -> {
+            for (int i = 0; i < 10000; i++) {
+                hashMap.put(new HashConflict(i), i);
+            }
+        });
 
-        @Override
-        public int hashCode() {
-            return value % 32;
-        }
+        Thread thread2 = new Thread(() -> {
+            for (int i = 0; i < 10000; i++) {
+                hashMap.put(new HashConflict(i), i);
+            }
+        });
 
-        @Override
-        public boolean equals(Object obj) {
-            return value.equals(obj);
-        }
+        thread1.start();
+        thread2.start();
+        thread1.join();
+        thread2.join();
+
+        System.out.println(hashMap);
     }
 }
