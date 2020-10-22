@@ -28,7 +28,7 @@ public class AspectAnnotation {
     @Around("cacheAnnotationPointcut()")
     public Object cacheAnnotationPointcut(ProceedingJoinPoint joinPoint) throws Throwable {
         // 获取method
-        Method method = this.getSpecificmethod(joinPoint);
+        Method method = this.getSpecificMethod(joinPoint);
         // 获取注解
         CacheAnnotation cacheAnnotation = AnnotationUtils.findAnnotation(method, CacheAnnotation.class);
         CacheOperationInvoker aopAllianceInvoker = getCacheOperationInvoker(joinPoint);
@@ -42,7 +42,7 @@ public class AspectAnnotation {
         }
     }
 
-    private Method getSpecificmethod(ProceedingJoinPoint pjp) {
+    private Method getSpecificMethod(ProceedingJoinPoint pjp) {
         MethodSignature methodSignature = (MethodSignature) pjp.getSignature();
         Method method = methodSignature.getMethod();
         // The method may be on an interface, but we need attributes from the
