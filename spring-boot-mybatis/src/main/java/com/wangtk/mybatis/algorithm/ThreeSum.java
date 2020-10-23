@@ -6,6 +6,12 @@ import java.util.List;
 
 public class ThreeSum {
 
+    public static void main(String[] args) {
+        ThreeSum threeSum = new ThreeSum();
+        List<List<Integer>> lists = threeSum.threeSum(new int[]{-1, 0, 1, 2, -1, -4});
+        System.out.println(lists);
+    }
+
     public List<List<Integer>> threeSums(int[] nums) {
 
         List<List<Integer>> nlist = new ArrayList<>();
@@ -55,36 +61,55 @@ public class ThreeSum {
 
     /***
      *
+     * [-5,-3,8]
      *
-     * -10 -9 -3 3 4 5 6 8 9
-     *
-     *
-     *
-     *
+     * -5 -5 -3 -3 -3 4 5 6 8 9
+     *  i  s                  e
+     *  i     s               e
+     *  i     s             e
+     *  i             s   e
+     *  i             s e
+     *     i  s               e
+     *     i  s             e
      * @param nums
      * @return
      */
     public List<List<Integer>> threeSum(int[] nums) {
+        List<List<Integer>> lists = new ArrayList<>();
         if (nums == null || nums.length < 3) {
-            return null;
+            return lists;
         }
-        ArrayList<List> lists = new ArrayList<>();
-
         Arrays.sort(nums);
-        int f = 0;
-        int s = 1;
-        int l = nums.length - 1;
-
-        while (true) {
-            if (f > l) {
+        int i = 0;
+        while (i < nums.length - 2) {
+            if (nums[i] > 0) {
                 break;
             }
-            int sum = nums[f] + nums[s] + nums[l];
-            if (sum == 0) {
-                lists.add(Arrays.asList(nums[f], nums[s], nums[l]));
+            int start = i + 1;
+            int end = nums.length - 1;
+            while (start < end) {
+                int sum = nums[i] + nums[start] + nums[end];
+                if (sum == 0) {
+                    lists.add(Arrays.asList(nums[i], nums[start], nums[end]));
+                    start++;
+                    end--;
+                    while (start < end && nums[start] == nums[start - 1]) {
+                        start++;
+                    }
+                    while (start < end && nums[end] == nums[end + 1]) {
+                        end--;
+                    }
+                } else if (sum < 0) {
+                    start++;
+                } else if (sum > 0) {
+                    end--;
+                }
             }
-
-
+            i++;
+            while (i < nums.length - 2 && nums[i] == nums[i - 1]) {
+                i++;
+            }
         }
+        return lists;
     }
 }
