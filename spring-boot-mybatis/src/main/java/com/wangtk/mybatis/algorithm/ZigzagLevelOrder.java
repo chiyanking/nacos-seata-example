@@ -8,7 +8,8 @@ import java.util.Map;
 /**
  * *
  */
-public class zigzagLevelOrder {
+public class ZigzagLevelOrder {
+
     class TreeNode {
         int val;
         TreeNode left;
@@ -23,6 +24,25 @@ public class zigzagLevelOrder {
         Map<Integer, List<Integer>> res = new HashMap<>();
         travelTree(root, res, 0);
         return new ArrayList<>(res.values());
+    }
+
+
+    /**
+     *      *
+     *    *  *
+     *  * * * *
+     */
+
+    void travelTree(TreeNode root, List<List<Integer>> res) {
+        int i = 0;
+        while (root != null) {
+            if (i < res.size()) {
+                res.add(new ArrayList<>());
+            }
+            List<Integer> integers = res.get(i);
+            integers.add(root.val);
+            root.left=root;
+        }
     }
 
 
