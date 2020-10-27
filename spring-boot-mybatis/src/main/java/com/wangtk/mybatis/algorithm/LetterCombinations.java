@@ -6,10 +6,16 @@ import java.util.List;
 public class LetterCombinations {
     public static void main(String[] args) {
 
+        LetterCombinations letterCombinations = new LetterCombinations();
+        List<String> strings = letterCombinations.letterCombinations("23");
     }
 
     public List<String> letterCombinations(String digits) {
         List<String> list = new ArrayList<>();
+        if(digits==null||digits.length()<1){
+            return list;
+
+        }
         String[] s = new String[digits.length()];
         for (int i = 0; i < digits.length(); i++) {
             switch (digits.charAt(i)){
@@ -23,23 +29,19 @@ public class LetterCombinations {
                 case '9':s[i]="wxyz";break;
             }
         }
-        list = getStringWithFor(s, 0, list, "");
+        getList(0, s, "", list);
         return list;
     }
 
-    private static List<String> getStringWithFor(String[] s, int i, List<String> list, String temp) {
-
-        if (i < s.length - 1) {
+    public void getList(int i, String[] s, String upStr, List<String> list) {
+        if (i == s.length - 1) {
             for (int j = 0; j < s[i].length(); j++) {
-                list = getStringWithFor(s, i + 1, list, temp + s[i].charAt(j));
+                list.add(upStr + s[i].charAt(j));
             }
-            i++;
-        } else {
-            for (int j = 0; j < s[i].length(); j++) {
-                list.add(temp + s[i].charAt(j));
-            }
+            return;
         }
-
-        return list;
+        for (int j = 0; j < s[i].length(); j++) {
+            getList(i+1, s, upStr + s[i].charAt(j), list);
+        }
     }
 }
