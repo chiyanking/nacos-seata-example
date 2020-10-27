@@ -10,7 +10,7 @@ public class ThreeSum {
         ThreeSum threeSum = new ThreeSum();
         List<List<Integer>> lists = threeSum.threeSum(new int[]{-1, 0, 1, 2, -1, -4});
         System.out.println(lists);
-        int i = threeSum.threeSumClosest(new int[]{-1, 2, 1, -4}, 1);
+        int i = threeSum.threeSumClosest(new int[]{-100,-98,-2,-1}, -101);
         System.out.println(i);
 
     }
@@ -128,34 +128,28 @@ public class ThreeSum {
             return Integer.MAX_VALUE;
         }
         Arrays.sort(nums);
-        int min = Integer.MAX_VALUE;
-
-
+        int closestNum = nums[0] + nums[1] + nums[2];
         for (int i = 0; i < nums.length - 2; i++) {
-
-            if (nums[i] > target) {
-                return min;
-            }
             int start = i + 1;
             int end = nums.length - 1;
             while (start < end) {
                 /**
                  *  target - (nums[i] + nums[start] + nums[end])
                  */
-                int temp = Math.abs(target - (nums[i] + nums[start] + nums[end]));
-                int i1 = target - temp;
-                if (temp < min) {
-                    min = temp;
+                int threeSum = nums[start] + nums[end] + nums[i];
+                if (Math.abs(threeSum - target) < Math.abs(closestNum - target)) {
+                    closestNum = threeSum;
                 }
-                if (i1 == 0) {
-                    return 0;
-                } else if (i1 < 0) {
-                    start++;
-                } else if (i1 > 0) {
+                if (threeSum > target) {
                     end--;
+                } else if (threeSum < target) {
+                    start++;
+                } else {
+                    // 如果已经等于target的话, 肯定是最接近的
+                    return target;
                 }
             }
         }
-        return min;
+        return closestNum;
     }
 }
