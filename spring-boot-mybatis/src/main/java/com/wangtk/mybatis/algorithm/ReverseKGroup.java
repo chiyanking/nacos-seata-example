@@ -1,5 +1,7 @@
 package com.wangtk.mybatis.algorithm;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Stack;
 
 
@@ -46,20 +48,14 @@ public class ReverseKGroup {
         Stack<ListNode> stack = new Stack();
         while (true) {
             ListNode p1 = lastP;
-            for (int i = 0; i < k; i++) {
-                if (p1.next != null) {
-                    p1 = p1.next;
-                    stack.push(p1);
-                }
+            for (int i = 0; i < k && p1.next != null; i++) {
+                p1 = p1.next;
+                stack.push(p1);
             }
             //另外一个数组第一个
             ListNode nh = p1.next;
             if (stack.size() != k) {
                 break;
-            }
-            if (first) {
-                h.next = p1;
-                first = false;
             }
             //lastP->1->2
             //lastP->2->1
@@ -74,6 +70,32 @@ public class ReverseKGroup {
             lastP = p2;
         }
         return h.next;
+    }
+
+    public ListNode reverseKGroups(ListNode head, int k) {
+        Deque<ListNode> stack = new ArrayDeque<ListNode>();
+        ListNode dummy = new ListNode(0);
+        ListNode p = dummy;
+        while (true) {
+            int count = 0;
+            ListNode tmp = head;
+            while (tmp != null && count < k) {
+                stack.add(tmp);
+                tmp = tmp.next;
+                count++;
+            }
+            if (count != k) {
+                p.next = head;
+                break;
+            }
+            while (!stack.isEmpty()) {
+                p.next = stack.pollLast();
+                p = p.next;
+            }
+            p.next = tmp;
+            head = tmp;
+        }
+        return dummy.next;
     }
 
 }
