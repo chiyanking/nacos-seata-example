@@ -39,7 +39,7 @@ public class ReverseKGroup {
      * 你的算法只能使用常数的额外空间。
      * 你不能只是单纯的改变节点内部的值，而是需要实际进行节点交换。
      */
-    public ListNode reverseKGroup(ListNode head, int k) {
+    public ListNode reverseKGroup1(ListNode head, int k) {
         ListNode h = new ListNode();
         h.next = head;
         ListNode lastP = new ListNode();
@@ -76,14 +76,14 @@ public class ReverseKGroup {
         return h.next;
     }
 
-    public ListNode reverseKGroup1(ListNode head, int k) {
+    public ListNode reverseKGroup(ListNode head, int k) {
         ListNode dummy = new ListNode();
         dummy.next = head;
         ListNode p = dummy;
         Stack<ListNode> stack = new Stack();
         while (true) {
             ListNode p1 = head;
-            for (int i = 0; i < k && p1.next != null; i++) {
+            for (int i = 0; i < k && p1 != null; i++) {
                 stack.push(p1);
                 p1 = p1.next;
             }
