@@ -53,9 +53,13 @@ public class ReverseKGroup {
                 stack.push(p1);
             }
             //另外一个数组第一个
-            ListNode nh = p1.next;
+            ListNode nextHead = p1.next;
             if (stack.size() != k) {
                 break;
+            }
+            if (first) {
+                h.next = p1;
+                first = false;
             }
             //lastP->1->2
             //lastP->2->1
@@ -65,14 +69,41 @@ public class ReverseKGroup {
                 p2.next = pop;
                 p2 = pop;
             }
-            p2.next = nh;
+            p2.next = nextHead;
             lastP.next = p1;
             lastP = p2;
         }
         return h.next;
     }
 
-    public ListNode reverseKGroups(ListNode head, int k) {
+    public ListNode reverseKGroup1(ListNode head, int k) {
+        ListNode dummy = new ListNode();
+        dummy.next = head;
+        ListNode p = dummy;
+        Stack<ListNode> stack = new Stack();
+        while (true) {
+            ListNode p1 = head;
+            for (int i = 0; i < k && p1.next != null; i++) {
+                stack.push(p1);
+                p1 = p1.next;
+            }
+            //至此 p1 是另外一个数组的第一个
+            if (stack.size() != k) {
+                p.next = head;
+                break;
+            }
+            while (stack.size() > 0) {
+                ListNode pop = stack.pop();
+                p.next = pop;
+                p = pop;
+            }
+            p.next = p1;
+            head = p1;
+        }
+        return dummy.next;
+    }
+
+    public ListNode reverseKGroup2(ListNode head, int k) {
         Deque<ListNode> stack = new ArrayDeque<ListNode>();
         ListNode dummy = new ListNode(0);
         ListNode p = dummy;
