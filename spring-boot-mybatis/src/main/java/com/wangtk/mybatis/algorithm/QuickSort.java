@@ -5,7 +5,7 @@ public class QuickSort {
 
     public static void main(String[] args) {
 
-        int[] tmpArr = new int[]{2, 3, 4, 9, 1, 6, 4, 8, 7, 5};
+        int[] tmpArr = new int[]{2, 3, 4, 9, 1, 3, 4, 8, 7, 5};
         sort(tmpArr, 0, tmpArr.length - 1);
         for (int i = 0; i < tmpArr.length; i++) {
             System.out.print(tmpArr[i] + " ");
@@ -19,6 +19,16 @@ public class QuickSort {
      * 2, 3, 4, 5, 1, 6, 4, 8, 7, 9
      *          l        r
      * 2, 3, 4, 4, 1, 6, 5, 8, 7, 9
+     *                l  r
+     * 2, 3, 4, 4, 1, 5, 6, 8, 7, 9
+     *
+     *
+     * 2, 3, 4, 9, 1, 3, 4, 8, 7, 5
+     * l                          r
+     *          l                 r
+     * 2, 3, 4, 5, 1, 3, 4, 8, 7, 9
+     *          l        r
+     * 2, 3, 4, 4, 1, 3, 5, 8, 7, 9
      *                l  r
      * 2, 3, 4, 4, 1, 5, 6, 8, 7, 9
      */
