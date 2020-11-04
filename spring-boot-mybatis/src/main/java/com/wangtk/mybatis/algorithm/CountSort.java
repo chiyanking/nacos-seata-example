@@ -7,17 +7,19 @@ public class CountSort {
 
 
     public static void main(String[] args) {
+        int range = 5;
+        int size = 30;
         Random random = new Random();
-        int[] array = new int[10];
-        for (int j = 0; j < 10; j++) {
-            array[j] = random.nextInt(5);
+        int[] array = new int[size];
+        for (int j = 0; j < size; j++) {
+            array[j] = random.nextInt(range);
         }
         System.out.println(Arrays.toString(array));
-        countSort(array);
+        countSort(array, range);
     }
 
-    public static void countSort(int[] array) {
-        int[] counts = new int[5];
+    public static void countSort(int[] array, int range) {
+        int[] counts = new int[range];
         for (int i = 0; i < array.length; i++) {
             counts[array[i]] = counts[array[i]] + 1;
         }
