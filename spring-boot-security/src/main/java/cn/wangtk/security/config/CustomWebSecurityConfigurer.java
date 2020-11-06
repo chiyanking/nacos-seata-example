@@ -10,18 +10,18 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import javax.annotation.Resource;
 
 @Configuration
-public class CustomWebSecurityConfig extends WebSecurityConfigurerAdapter {
+public class CustomWebSecurityConfigurer extends WebSecurityConfigurerAdapter {
 
     @Resource
     SmsCodeAuthenticationSecurityConfigurer smsCodeAuthenticationSecurityConfigurer;
 
     @Resource
-    UserDetailsService userDetailsService;
+    UserDetailsService customUserDetailsService;
 
 
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService);
+        auth.userDetailsService(customUserDetailsService);
     }
 
     @Override
