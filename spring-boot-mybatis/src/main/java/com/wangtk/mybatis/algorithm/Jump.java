@@ -10,7 +10,24 @@ public class Jump {
 
         System.out.println(jump1);
 
+        int i = jump.JumpFloor(4);
+        System.out.println(i);
     }
+
+    public int JumpFloor(int target) {
+        int count = 0;
+        if (target <= 0)
+            return count;
+        else if (target == 1)
+            return 1;
+        else if (target == 2)
+            return 2;
+        else {
+            count = JumpFloor(target - 1) + JumpFloor(target - 2);
+            return count;
+        }
+    }
+
 
     public int jump(int[] nums) {
         int n = nums.length - 1;
