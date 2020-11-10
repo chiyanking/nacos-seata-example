@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>org.springframework.security.config.annotation.web.builders.HttpSecurity</OriginalElement>
+  <nodes>
+    <node x="521.625" y="0.0">org.springframework.security.config.annotation.SecurityBuilder</node>
+    <node x="186.87499999999994" y="206.0">org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder</node>
+    <node x="0.0" y="442.0">org.springframework.security.config.annotation.web.builders.WebSecurity</node>
+    <node x="360.5520833333333" y="80.0">org.springframework.security.config.annotation.AbstractSecurityBuilder</node>
+    <node x="808.375" y="103.0">org.springframework.security.config.annotation.web.HttpSecurityBuilder</node>
+    <node x="679.0" y="519.0">org.springframework.security.config.annotation.web.builders.HttpSecurity</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder" target="org.springframework.security.config.annotation.SecurityBuilder">
+      <point x="177.75" y="-93.0" />
+      <point x="720.125" y="181.0" />
+      <point x="603.0520833333333" y="181.0" />
+      <point x="603.0520833333333" y="60.0" />
+      <point x="605.625" y="60.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.springframework.security.config.annotation.web.builders.HttpSecurity" target="org.springframework.security.config.annotation.web.HttpSecurityBuilder">
+      <point x="0.0" y="-60.0" />
+      <point x="869.5" y="417.0" />
+      <point x="908.375" y="417.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.springframework.security.config.annotation.web.builders.WebSecurity" target="org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder">
+      <point x="135.25" y="-137.0" />
+      <point x="405.75" y="417.0" />
+      <point x="364.62499999999994" y="417.0" />
+      <point x="-177.75" y="93.0" />
+    </edge>
+    <edge source="org.springframework.security.config.annotation.web.builders.HttpSecurity" target="org.springframework.security.config.annotation.SecurityBuilder">
+      <point x="127.0" y="-60.0" />
+      <point x="996.5" y="417.0" />
+      <point x="1018.875" y="417.0" />
+      <point x="1018.875" y="50.0" />
+      <point x="672.825" y="50.0" />
+      <point x="67.20000000000005" y="15.0" />
+    </edge>
+    <edge source="org.springframework.security.config.annotation.web.builders.WebSecurity" target="org.springframework.security.config.annotation.SecurityBuilder">
+      <point x="-135.25" y="-137.0" />
+      <point x="135.25" y="417.0" />
+      <point x="176.375" y="417.0" />
+      <point x="176.375" y="50.0" />
+      <point x="538.425" y="50.0" />
+      <point x="-67.20000000000005" y="15.0" />
+    </edge>
+    <edge source="org.springframework.security.config.annotation.web.builders.HttpSecurity" target="org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder">
+      <point x="-127.0" y="-60.0" />
+      <point x="742.5" y="417.0" />
+      <point x="720.125" y="417.0" />
+      <point x="177.75" y="93.0" />
+    </edge>
+    <edge source="org.springframework.security.config.annotation.AbstractSecurityBuilder" target="org.springframework.security.config.annotation.SecurityBuilder">
+      <point x="-5.6843418860808015E-14" y="-38.0" />
+      <point x="476.55208333333326" y="60.0" />
+      <point x="572.025" y="60.0" />
+      <point x="-33.60000000000002" y="15.0" />
+    </edge>
+    <edge source="org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder" target="org.springframework.security.config.annotation.AbstractSecurityBuilder">
+      <point x="-177.75" y="-93.0" />
+      <point x="364.62499999999994" y="181.0" />
+      <point x="476.5520833333333" y="181.0" />
+      <point x="0.0" y="38.0" />
+    </edge>
+    <edge source="org.springframework.security.config.annotation.web.HttpSecurityBuilder" target="org.springframework.security.config.annotation.SecurityBuilder">
+      <point x="0.0" y="-15.0" />
+      <point x="908.375" y="60.0" />
+      <point x="639.225" y="60.0" />
+      <point x="33.60000000000002" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="530.0" y="358.0" />
+  <SelectedNodes>
+    <node>org.springframework.security.config.annotation.web.builders.HttpSecurity</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
