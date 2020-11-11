@@ -1,17 +1,21 @@
 package cn.wangtk.security.filter;
 
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationServiceException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
+import javax.annotation.Resource;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+@Component
 public class SmsCodeAuthenticationFilter extends AbstractAuthenticationProcessingFilter {
 
     /**
@@ -21,6 +25,9 @@ public class SmsCodeAuthenticationFilter extends AbstractAuthenticationProcessin
 
 
     private boolean postOnly = true;
+
+    @Resource
+    AuthenticationManager authenticationManager;
 
     protected SmsCodeAuthenticationFilter() {
         super(new AntPathRequestMatcher("/login", "GET"));
@@ -75,5 +82,10 @@ public class SmsCodeAuthenticationFilter extends AbstractAuthenticationProcessin
 
     public final String getMobileParameter() {
         return mobileParameter;
+    }
+
+    @Override
+    public void afterPropertiesSet() {
+        setAuthenticationManager(authenticationManager);
     }
 }
