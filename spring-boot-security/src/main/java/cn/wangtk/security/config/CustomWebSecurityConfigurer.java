@@ -36,7 +36,7 @@ public class CustomWebSecurityConfigurer extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 //        http.addFilterBefore(validateCodeFilter, UsernamePasswordAuthenticationFilter.class)
-        http.apply(smsCodeAuthenticationSecurityConfigurer);//社交登录
+        http.apply(smsCodeAuthenticationSecurityConfigurer);//短信登录
         http.authorizeRequests()
                 .antMatchers("/index").permitAll()
                 .anyRequest().permitAll();
