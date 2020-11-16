@@ -16,8 +16,11 @@ public class TestParamController {
     IndexController indexController;
 
     @GetMapping("testParam")
-    public String testParam(WParameter wParameter) {
+    public String testParam(WParameter wParameter, String name, String value) {
         System.out.println(wParameter);
+        String testlocal = "王麻子";
+        int aaaaa= 1;
+        long bbbb =1L;
         return new Date().toString();
     }
 

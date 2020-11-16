@@ -2,4 +2,4 @@ spring:
   application:
     name: spring-boot-security
 server:
-  port: 8098
+  port: 8080

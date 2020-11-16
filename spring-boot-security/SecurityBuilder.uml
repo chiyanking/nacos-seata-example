@@ -3,13 +3,13 @@
   <ID>JAVA</ID>
   <OriginalElement>org.springframework.security.config.annotation.SecurityBuilder</OriginalElement>
   <nodes>
-    <node x="968.2303921568629" y="452.0">org.springframework.security.config.annotation.web.builders.WebSecurity</node>
-    <node x="1321.2303921568628" y="113.0">org.springframework.beans.factory.Aware</node>
-    <node x="27.625" y="529.0">org.springframework.security.config.annotation.web.builders.HttpSecurity</node>
     <node x="492.5" y="0.0">org.springframework.security.config.annotation.SecurityBuilder</node>
     <node x="221.0" y="216.0">org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder</node>
     <node x="568.2303921568628" y="507.0">org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder</node>
+    <node x="968.2303921568629" y="452.0">org.springframework.security.config.annotation.web.builders.WebSecurity</node>
+    <node x="1321.2303921568628" y="113.0">org.springframework.beans.factory.Aware</node>
     <node x="395.9803921568628" y="90.0">org.springframework.security.config.annotation.AbstractSecurityBuilder</node>
+    <node x="27.625" y="529.0">org.springframework.security.config.annotation.web.builders.HttpSecurity</node>
     <node x="0.0" y="113.0">org.springframework.security.config.annotation.web.HttpSecurityBuilder</node>
     <node x="1249.2303921568628" y="294.0">org.springframework.context.ApplicationContextAware</node>
     <node x="830.5" y="113.0">org.springframework.security.config.annotation.authentication.ProviderManagerBuilder</node>
@@ -103,10 +103,8 @@
       <point x="0.0" y="38.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.6907251264755481" x="976.0546875" y="650.31005859375" />
-  <SelectedNodes>
-    <node>org.springframework.security.config.annotation.SecurityBuilder</node>
-  </SelectedNodes>
+  <settings layout="Hierarchic Group" zoom="0.8993464052287582" x="781.0" y="363.0" />
+  <SelectedNodes />
   <Categories>
     <Category>Fields</Category>
   </Categories>
