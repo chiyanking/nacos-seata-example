@@ -14,7 +14,7 @@
         <spring-cloud-alibaba.version>2.1.1.RELEASE</spring-cloud-alibaba.version>
         <spring-cloud.version>Greenwich.SR3</spring-cloud.version>
         <!--                <sharding-sphere.version>4.1.0</sharding-sphere.version>-->
-        <sharding-sphere.version>5.0.0-RC1-SNAPSHOT</sharding-sphere.version>
+        <sharding-sphere.version>4.1.1</sharding-sphere.version>
         <seata.version>1.2.0</seata.version>
     </properties>
 
