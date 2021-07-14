@@ -1,4 +1,5 @@
 @EventListener 注解是被 EventListenerMethodProcessor 在spring的初始化阶段处理的
+
 ```
 org.springframework.context.support.AbstractApplicationContext.refresh();
         org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(ConfigurableListableBeanFactory beanFactory);
@@ -7,9 +8,80 @@ org.springframework.context.support.AbstractApplicationContext.refresh();
 ```
 
 @RabbitListener 注解是被 RabbitListenerAnnotationBeanPostProcessor 在spring的初始化阶段处理的
+
 ```
 org.springframework.context.support.AbstractApplicationContext.refresh();
         org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(ConfigurableListableBeanFactory beanFactory);
             beanFactory.preInstantiateSingletons()
                 org.springframework.context.event.RabbitListenerAnnotationBeanPostProcessor.afterSingletonsInstantiated()
 ```
+
+
+
+RabbitListenerEndpoint
+    MethodRabbitListenerEndpoint
+    MultiMethodRabbitListenerEndpoint
+    SimpleRabbitListenerEndpoint
+
+
+@RabbitListener -> 对应一个 MethodRabbitListenerEndpoint
+
+
+RabbitListenerAnnotationBeanPostProcessor 是什么时候被加载到spring中去
+
+
+
+public class RabbitBootstrapConfiguration implements ImportBeanDefinitionRegistrar {
+
+	@Override
+	public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry) {
+        //将 RabbitListenerAnnotationBeanPostProcessor 注册到 Beanfactory 中
+		if (!registry.containsBeanDefinition(
+				RabbitListenerConfigUtils.RABBIT_LISTENER_ANNOTATION_PROCESSOR_BEAN_NAME)) {
+            //将 RabbitListenerAnnotationBeanPostProcessor 注册到 Beanfactory 中的
+			registry.registerBeanDefinition(RabbitListenerConfigUtils.RABBIT_LISTENER_ANNOTATION_PROCESSOR_BEAN_NAME,
+					new RootBeanDefinition(RabbitListenerAnnotationBeanPostProcessor.class));
+		}
+        //将 RabbitListenerEndpointRegistry 注册到 Beanfactory 中
+		if (!registry.containsBeanDefinition(RabbitListenerConfigUtils.RABBIT_LISTENER_ENDPOINT_REGISTRY_BEAN_NAME)) {
+			registry.registerBeanDefinition(RabbitListenerConfigUtils.RABBIT_LISTENER_ENDPOINT_REGISTRY_BEAN_NAME,
+					new RootBeanDefinition(RabbitListenerEndpointRegistry.class));
+		}
+	}
+
+}
+
+@Order public class RabbitListenerConfigurationSelector implements DeferredImportSelector {
+
+	@Override
+	public String[] selectImports(AnnotationMetadata importingClassMetadata) {
+		return new String[] { RabbitBootstrapConfiguration.class.getName() };
+	}
+
+}
+
+@Import(RabbitListenerConfigurationSelector.class)
+public @interface EnableRabbit {
+
+}
+
+@Configuration(proxyBeanMethods = false)
+@ConditionalOnClass(EnableRabbit.class)
+class RabbitAnnotationDrivenConfiguration {
+
+	@EnableRabbit
+	static class EnableRabbitConfiguration {
+
+	}
+
+}
+
+@Import(RabbitAnnotationDrivenConfiguration.class)
+public class RabbitAutoConfiguration {
+
+}
+
+spring.factories 中有 org.springframework.boot.autoconfigure.EnableAutoConfiguration =
+org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration
+
+ConfigurationClassPostProcessor
