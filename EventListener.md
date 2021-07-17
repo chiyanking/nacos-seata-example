@@ -16,20 +16,12 @@ org.springframework.context.support.AbstractApplicationContext.refresh();
                 org.springframework.context.event.RabbitListenerAnnotationBeanPostProcessor.afterSingletonsInstantiated()
 ```
 
+RabbitListenerEndpoint MethodRabbitListenerEndpoint MultiMethodRabbitListenerEndpoint 如果注解到class的头顶上则产生这个类
+SimpleRabbitListenerEndpoint
 
-
-RabbitListenerEndpoint
-    MethodRabbitListenerEndpoint
-    MultiMethodRabbitListenerEndpoint
-    SimpleRabbitListenerEndpoint
-
-
-@RabbitListener -> 对应一个 MethodRabbitListenerEndpoint
-
+@RabbitListener -> 对应一个 MethodRabbitListenerEndpoint -> 如果没有指定
 
 RabbitListenerAnnotationBeanPostProcessor 是什么时候被加载到spring中去
-
-
 
 public class RabbitBootstrapConfiguration implements ImportBeanDefinitionRegistrar {
 
@@ -85,3 +77,14 @@ spring.factories 中有 org.springframework.boot.autoconfigure.EnableAutoConfigu
 org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration
 
 ConfigurationClassPostProcessor
+
+springRabbitMq 是什么时候启动的 
+    RabbitListenerEndpointRegistry 实现了 SmartLifecycle 在spring初始化完成后调用 start 方法 循环启动每一个 MessageListenerContainer 的 start 方法
+
+
+com.rabbitmq.client.impl.AMQConnection#startMainLoop
+    com.rabbitmq.client.impl.FrameHandler#readFrame 从 _socket 中读取 读取数据
+    com.rabbitmq.client.impl.AMQChannel#handleFrame
+        com.rabbitmq.client.impl.CommandAssembler#handleFrame
+        // 装配器将 CommandAssembler 将Frame转换为 AMQCommand
+    com.rabbitmq.client.impl.ChannelN#processAsync
