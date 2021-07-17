@@ -76,9 +76,7 @@ public class RabbitAutoConfiguration {
 spring.factories 中有 org.springframework.boot.autoconfigure.EnableAutoConfiguration =
 org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration
 
-ConfigurationClassPostProcessor
-
-springRabbitMq 是什么时候启动的 
+springRabbitMQ 是什么时候启动的 
     RabbitListenerEndpointRegistry 实现了 SmartLifecycle 在spring初始化完成后调用 start 方法 循环启动每一个 MessageListenerContainer 的 start 方法
 
 
