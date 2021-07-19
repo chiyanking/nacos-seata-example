@@ -158,7 +158,6 @@ AutorecoveringConnection
 conn.init();
 
 
-AMQConnection 和 RecoveryAwareAMQConnection 的不同是 ChannelManager 不同
+AMQConnection 和 RecoveryAwareAMQConnection
 
-
-RecoveryAwareAMQConnection 是 AMQConnection 的子类
+RecoveryAwareAMQConnection 是 AMQConnection 子类 不同是 ChannelManager 不同
