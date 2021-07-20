@@ -129,6 +129,8 @@ AsyncMessageProcessingConsumer
 BlockingQueueConsumer
     private Channel channel;
 
+ChannelN extends AMQChannel
+    private final ConsumerDispatcher dispatcher;
 
 
 com.rabbitmq.client.ConnectionFactory
