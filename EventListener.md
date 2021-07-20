@@ -99,18 +99,18 @@ AMQConnection
     private final AMQChannel _channel0;
     private final FrameHandler _frameHandler;
 
-public void start(){
-    this._frameHandler.initialize(this);
-}
+    public void start(){
+        this._frameHandler.initialize(this);
+    }
 
-frameHandler.initialize(AMQConnection connection) {
-    connection.startMainLoop();
-}
-
-AMQConnection.startMainLoop(){
-    MainLoop loop = new MainLoop();
-    mainLoopThread.start();
-}
+    FrameHandler#initialize(AMQConnection connection) {
+        connection.startMainLoop();
+    }
+    
+    AMQConnection#startMainLoop(){
+        MainLoop loop = new MainLoop();
+        mainLoopThread.start();
+    }
 
 这里可以看出来 FrameHandler 才是真正的socket溜处理
 
@@ -160,4 +160,5 @@ conn.init();
 
 AMQConnection 和 RecoveryAwareAMQConnection
 
-RecoveryAwareAMQConnection 是 AMQConnection 子类 不同是 ChannelManager 不同
+RecoveryAwareAMQConnection 是 AMQConnection 子类  
+RecoveryAwareAMQConnection 和 AMQConnection 是 ChannelManager 不同
