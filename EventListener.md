@@ -162,5 +162,8 @@ conn.init();
 
 AMQConnection 和 RecoveryAwareAMQConnection
 
-RecoveryAwareAMQConnection 是 AMQConnection 子类  
+RecoveryAwareAMQConnection extends AMQConnection   
 RecoveryAwareAMQConnection 和 AMQConnection 是 ChannelManager 不同
+
+
+RecoveryAwareChannelN extend ChannelN
