@@ -115,7 +115,8 @@ AMQConnection
 这里可以看出来 FrameHandler 才是真正的socket溜处理
 
 
-
+org.springframework.amqp.rabbit.connection.CachingConnectionFactory#getCachedChannelProxy
+org.springframework.amqp.rabbit.connection.CachingConnectionFactory#getChannel
 一个 @RabbitListener 产生一个 MessageListenerContainer
 
 SimpleMessageListenerContainer
@@ -139,11 +140,17 @@ com.rabbitmq.client.impl.recovery.RecoveryAwareAMQConnection
 com.rabbitmq.client.impl.recovery.AutorecoveringConnection
 
 ConnectionFactory
+    
+    private final ChannelCachingConnectionProxy connection;
+    
     Connection newConnection(ExecutorService executor, List<Address> addrs, String clientProvidedName){
         return 可能返回: AutorecoveringConnection
         return 可能返回：AMQConnection
     }
 
+
+如果`CachingConnectionFactory`缓存模式是`channel`模式 所有的`channel`会用一个`connection`
+    channel.close(); //`ChannelProxy` 这个 channel(`ChannelProxy`) 返回给`CachingConnectionFactory`的缓存(`cachedChannelsNonTransactional`)中
 
 
 AutorecoveringConnection
@@ -167,3 +174,6 @@ RecoveryAwareAMQConnection 和 AMQConnection 是 ChannelManager 不同
 
 
 RecoveryAwareChannelN extend ChannelN
+
+
+Cache 缓存模式是 channel
