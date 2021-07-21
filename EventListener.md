@@ -16,8 +16,10 @@ org.springframework.context.support.AbstractApplicationContext.refresh();
                 org.springframework.context.event.RabbitListenerAnnotationBeanPostProcessor.afterSingletonsInstantiated()
 ```
 
-RabbitListenerEndpoint MethodRabbitListenerEndpoint MultiMethodRabbitListenerEndpoint 如果注解到class的头顶上则产生这个类
-SimpleRabbitListenerEndpoint
+RabbitListenerEndpoint 
+    MethodRabbitListenerEndpoint 
+    MultiMethodRabbitListenerEndpoint 如果注解到class的头顶上则产生这个类
+    SimpleRabbitListenerEndpoint
 
 @RabbitListener -> 对应一个 MethodRabbitListenerEndpoint -> 如果没有指定
 
@@ -43,7 +45,8 @@ public class RabbitBootstrapConfiguration implements ImportBeanDefinitionRegistr
 
 }
 
-@Order public class RabbitListenerConfigurationSelector implements DeferredImportSelector {
+@Order 
+public class RabbitListenerConfigurationSelector implements DeferredImportSelector {
 
 	@Override
 	public String[] selectImports(AnnotationMetadata importingClassMetadata) {
@@ -99,7 +102,7 @@ AMQConnection
     private final AMQChannel _channel0;
     private final FrameHandler _frameHandler;
 
-    public void start(){
+    AMQConnection.start(){
         this._frameHandler.initialize(this);
     }
 
@@ -112,7 +115,7 @@ AMQConnection
         mainLoopThread.start();
     }
 
-这里可以看出来 FrameHandler 才是真正的socket溜处理
+这里可以看出来 FrameHandler 才是真正的 将数据写入到 `socket`中 处理的工具
 
 
 org.springframework.amqp.rabbit.connection.CachingConnectionFactory#getCachedChannelProxy
