@@ -76,15 +76,15 @@ public class RabbitAutoConfiguration {
 
 }
 
-spring.factories 中有 org.springframework.boot.autoconfigure.EnableAutoConfiguration =
-org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration
+spring.factories 文件中
+    org.springframework.boot.autoconfigure.EnableAutoConfiguration = org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration
 
-springRabbitMQ 是什么时候启动的 
-    RabbitListenerEndpointRegistry 实现了 SmartLifecycle 在spring初始化完成后调用 start 方法 循环启动每一个 MessageListenerContainer 的 start 方法
+SpringRabbitMQ 什么时候启动 `MessageListenerContainer`
+    `RabbitListenerEndpointRegistry`实现了`SmartLifecycle`在spring初始化完成后调用`start`方法 循环启动每一个`MessageListenerContainer`的`start`方法
 
-queue -> InternalConsumer 一个 queue 对应一个 InternalConsumer
-com.rabbitmq.client.impl.AMQChannel#doEnqueueRpc 
-    一个 AMQChannel 可能对应多个 InternalConsumer 所以在发送请求和接受请求必须先入队
+InternalConsumer 一个`queue`设置预取数量从socket读取message放到
+com.rabbitmq.client.impl.AMQChannel#doEnqueueRpc
+    一个`AMQChannel`可能对应多个`InternalConsumer`所以在发送请求和接受请求必须先入队
 
 
 
@@ -115,7 +115,7 @@ AMQConnection
         mainLoopThread.start();
     }
 
-这里可以看出来 FrameHandler 才是真正的 将数据写入到 `socket`中 处理的工具
+这里可以看出来`FrameHandler`才是真正的将数据写入到`socket`中处理的工具
 
 
 org.springframework.amqp.rabbit.connection.CachingConnectionFactory#getCachedChannelProxy
