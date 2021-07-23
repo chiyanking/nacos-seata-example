@@ -137,6 +137,13 @@ ChannelN extends AMQChannel
     private final ConsumerDispatcher dispatcher;
 
 
+每一个`channel`都连接到`queue`上设置预取数据大小以及建议
+    将`InternalConsumer`连接到`channel`上面
+
+    启动一个消费者，并返回服务端生成的消费者标识
+    最终调用 channel.basicConsume(...)
+
+
 com.rabbitmq.client.ConnectionFactory
 com.rabbitmq.client.impl.AMQConnection
 com.rabbitmq.client.impl.recovery.RecoveryAwareAMQConnection
@@ -157,6 +164,7 @@ ConnectionFactory
 
 
 AutorecoveringConnection
+
     private volatile RecoveryAwareAMQConnection delegate;
     
     public AutorecoveringConnection(...){
