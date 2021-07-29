@@ -124,7 +124,7 @@ org.springframework.amqp.rabbit.connection.CachingConnectionFactory#getChannel
 
 SimpleMessageListenerContainer
     private Set<BlockingQueueConsumer> consumers;
-    private volatile MessageListener messageListener; //最终消息处理器
+    private volatile MessageListener messageListener; //最终交给消息处理器
 
 
 AsyncMessageProcessingConsumer
