@@ -17,11 +17,11 @@ org.springframework.context.support.AbstractApplicationContext.refresh();
 ```
 
 RabbitListenerEndpoint 
-    MethodRabbitListenerEndpoint 
-    MultiMethodRabbitListenerEndpoint 如果注解到class的头顶上则产生这个类
+    MethodRabbitListenerEndpoint  如果`@RabbitListener`注解到方法上则产生这个类
+    MultiMethodRabbitListenerEndpoint 如果`@RabbitListener`注解到class的头顶上则产生这个类
     SimpleRabbitListenerEndpoint
 
-@RabbitListener -> 对应一个 MethodRabbitListenerEndpoint -> 如果没有指定
+@RabbitListener -> 对应一个 RabbitListenerEndpoint -> 如果没有指定
 
 RabbitListenerAnnotationBeanPostProcessor 是什么时候被加载到spring中去
 
