@@ -182,7 +182,7 @@ conn.init();
 AMQConnection 和 RecoveryAwareAMQConnection
 
 RecoveryAwareAMQConnection extends AMQConnection   
-RecoveryAwareAMQConnection 和 AMQConnection 是 ChannelManager 不同
+RecoveryAwareAMQConnection 和 AMQConnection 不同的是 ChannelManager
 
 
 RecoveryAwareChannelN extend ChannelN
