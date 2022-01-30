@@ -8,6 +8,6 @@
 #  cloud:
 #    nacos:
 #      config:
-#        server-addr: ${NACOS_SERVER_ADDR:192.168.1.53:8848}
+#        server-addr: ${NACOS_SERVER_ADDR:localhost:8848}
 #        file-extension: ${NACOS_FILE_EXTENSION:yaml}
 #        namespace: ${NACOS_NAMESPACE:}

@@ -4,7 +4,7 @@
  Source Server         :  本地
  Source Server Type    : MySQL
  Source Server Version : 50721
- Source Host           : 192.168.1.53:8848
+ Source Host           : localhost:8848
  Source Schema         : db_storage
 
  Target Server Type    : MySQL
