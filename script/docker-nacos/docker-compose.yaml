@@ -1,0 +1,87 @@
+version: "3"
+services:
+  mysql:
+    container_name: mysql
+    # 最新的mysql8版本
+    image: mysql:5.7
+    environment:
+      # mysql root用户密码
+      MYSQL_ROOT_PASSWORD: root
+    command:
+      --default-authentication-plugin=mysql_native_password
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_general_ci
+      --explicit_defaults_for_timestamp=true
+      --lower_case_table_names=1
+      --max_allowed_packet=128M;
+    volumes:
+      # mysql的数据文件
+      - ./mysql/data:/var/lib/mysql
+      # mysql配置文件
+      - ./mysql/config:/etc/mysql/conf.d
+    ports:
+      - "3306:3306"
+  nacos1:
+    hostname: nacos1
+    container_name: nacos1
+    image: nacos/nacos-server:latest
+    volumes:
+      # 需要添加mysql8的插件
+      #- ./nacos/plugins/mysql/:/home/nacos/plugins/mysql/
+      # 把日志文件映射出来
+      - ./nacos/logs/nacos1:/home/nacos/logs
+      # 把配置文件映射出来
+      - ./nacos/init.d/custom.properties:/home/nacos/init.d/custom.properties
+    
+    environment:                       # 设置环境变量,相当于docker run命令中的-e
+      - JVM_XMS=512m
+      - JVM_XMX=512m
+      - JVM_XMN=128m
+      #- MODE=standalone
+    ports:
+      - "8848:8848"
+      - "9555:9555"
+    env_file:
+        # 集群配置文件
+      - ./nacos/env/nacos-hostname.env
+    restart: always
+    depends_on:
+      - mysql
+  nacos2:
+    hostname: nacos2
+    image: nacos/nacos-server:latest
+    container_name: nacos2
+    volumes:
+      #- ./nacos/plugins/mysql/:/home/nacos/plugins/mysql/
+      - ./nacos/logs/nacos2:/home/nacos/logs
+      - ./nacos/init.d/custom.properties:/home/nacos/init.d/custom.properties
+    environment:                        # 设置环境变量,相当于docker run命令中的-e
+      - JVM_XMS=512m
+      - JVM_XMX=512m
+      - JVM_XMN=128m
+    ports:
+      - "8849:8848"
+    env_file:
+      - ./nacos/env/nacos-hostname.env
+    restart: always
+    depends_on:
+      - mysql
+  nacos3:
+    hostname: nacos3
+    image: nacos/nacos-server:latest
+    container_name: nacos3
+    volumes:
+      #- ./nacos/plugins/mysql/:/home/nacos/plugins/mysql/
+      - ./nacos/logs/nacos3:/home/nacos/logs
+      - ./nacos/init.d/custom.properties:/home/nacos/init.d/custom.properties
+    environment:                      # 设置环境变量,相当于docker run命令中的-e
+      - JVM_XMS=512m
+      - JVM_XMX=512m
+      - JVM_XMN=128m
+    ports:
+      - "8850:8848"
+    env_file:
+      - ./nacos/env/nacos-hostname.env
+    restart: always
+    depends_on:
+      - mysql
