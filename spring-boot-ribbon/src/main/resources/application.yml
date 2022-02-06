@@ -4,7 +4,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: localhost:8848
+        server-addr: 10.50.20.232:8848
         watch-delay: 3000
 server:
   port: 8096
@@ -23,4 +23,4 @@ hystrix:
         isolation:
           thread:
             #设置请求超时时间，默认1秒，超过指定的时间后，触发服务熔断
-            timeoutInMilliseconds: 1000000
+            timeoutInMilliseconds: 100

@@ -1,13 +1,16 @@
 package cn.wangtk.security;
 
-import org.junit.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-@SpringBootTest
 class SecurityApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+
+    public static void main(String[] args) {
+
+        ClassPathXmlApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+
+        System.out.println(classPathXmlApplicationContext);
+
+    }
 
 }
