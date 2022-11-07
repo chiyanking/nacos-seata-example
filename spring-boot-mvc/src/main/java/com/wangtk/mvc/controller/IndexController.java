@@ -18,9 +18,13 @@ public class IndexController implements InitializingBean {
     @Resource
     IndexService indexService;
 
+    private String a = "fadsfasdf1!!!";
+    private String b = "fdsaf111ls";
+
+
     @GetMapping("index")
     public String index() {
-        return indexService.getIndexService();
+        return "你好!你好!" + a + b;
     }
 
     @GetMapping("indexWithoutAop")

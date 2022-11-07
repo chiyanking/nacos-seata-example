@@ -1,0 +1,12 @@
+[
+    {
+        "command": "editor.action.moveLinesDownAction",
+        "key": "shift+cmd+[ArrowDown]",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "command": "editor.action.moveLinesUpAction",
+        "key": "shift+cmd+[ArrowUp]",
+        "when": "editorTextFocus && !editorReadonly"
+    }
+]

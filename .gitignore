@@ -27,3 +27,4 @@
 /.nb-gradle/
 /script/docker-nacos/nacos/logs/
 /script/docker-nacos/mysql/data/
+.DS_Store
