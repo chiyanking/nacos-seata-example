@@ -1,7 +1,7 @@
 package cn.wangtk.algorithm;
 
 
-public class l_28_找出字符串中第一个匹配项的下标 {
+public class L_28_找出字符串中第一个匹配项的下标 {
 
 
     public static void main(String[] args) {

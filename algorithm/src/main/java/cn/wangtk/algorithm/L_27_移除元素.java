@@ -1,7 +1,7 @@
 package cn.wangtk.algorithm;
 
 
-public class l_27_移除元素 {
+public class L_27_移除元素 {
 
 
     public static void main(String[] args) {
