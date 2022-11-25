@@ -20,6 +20,7 @@
 
     <modules>
         <module>algorithm</module>
+        <module>dubbo-account-server</module>
         <module>nacos-seata-order-server</module>
         <module>nacos-seata-storage-server</module>
         <module>nacos-seata-account-server</module>

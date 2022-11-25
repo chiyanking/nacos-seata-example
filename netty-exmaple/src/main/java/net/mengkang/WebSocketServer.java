@@ -10,11 +10,11 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 
 public final class WebSocketServer {
 
-    private static final int PORT = 8899;
+    private static final int PORT = 8083;
 
     public static void main(String[] args) throws Exception {
 
-        EventLoopGroup bossGroup = new NioEventLoopGroup(1);
+        EventLoopGroup bossGroup = new NioEventLoopGroup(2);
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         try {
             ServerBootstrap b = new ServerBootstrap();
